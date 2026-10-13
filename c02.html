@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<!-- saved from url=(0195)file:///C:/Users/user/Downloads/%EC%A0%95%EB%A0%AC%ED%83%90%EC%83%89_%EA%B3%BC%ED%95%99%EA%B3%A0_%EC%B0%BD%EC%9D%98%EB%A0%A5_%EB%AC%B8%EC%A0%9C3%EA%B0%9C_%EA%B7%B8%EB%A6%BC%ED%8F%AC%ED%95%A8.html -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>데이터 정렬·탐색 활용 과학고 창의력 경진대회 문제 3개</title>
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:"Malgun Gothic","Apple SD Gothic Neo",Arial,sans-serif;
+  background:linear-gradient(135deg,#ecfeff,#fff7ed,#eef2ff);
+  color:#0f172a;
+}
+header{
+  background:linear-gradient(135deg,#0f766e,#1d4ed8,#7c2d12);
+  color:white;
+  padding:30px;
+  text-align:center;
+}
+header h1{margin:0;font-size:31px}
+header p{font-size:18px;line-height:1.7;margin:10px 0 0}
+main{max-width:1180px;margin:0 auto;padding:24px}
+.problem{
+  background:white;
+  border-radius:28px;
+  padding:26px;
+  margin:26px 0;
+  border:1px solid #dbeafe;
+  box-shadow:0 14px 35px rgba(15,23,42,.14);
+}
+.badge{
+  display:inline-block;
+  padding:7px 13px;
+  background:#ede9fe;
+  color:#5b21b6;
+  border-radius:999px;
+  font-weight:900;
+  margin-bottom:12px;
+}
+h2{color:#1d4ed8;font-size:28px;margin:0 0 16px}
+h3{color:#7c2d12;font-size:22px}
+.scene{
+  display:grid;
+  grid-template-columns:1.02fr 1fr;
+  gap:24px;
+  align-items:start;
+}
+@media(max-width:900px){.scene{grid-template-columns:1fr}}
+.story{
+  background:#f8fafc;
+  border-radius:20px;
+  padding:18px;
+  border:1px solid #e2e8f0;
+  font-size:18px;
+  line-height:1.75;
+}
+.visual{
+  background:#fff7ed;
+  border-radius:22px;
+  padding:18px;
+  border:1px solid #fed7aa;
+}
+svg{
+  width:100%;
+  max-width:540px;
+  display:block;
+  margin:0 auto 14px;
+}
+.cards{
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin:16px 0;
+}
+.cardnum{
+  min-width:74px;
+  min-height:66px;
+  border-radius:16px;
+  background:#dbeafe;
+  border:4px solid #60a5fa;
+  color:#1e3a8a;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  font-weight:900;
+  font-size:22px;
+}
+.cardnum.hot{background:#fee2e2;border-color:#ef4444;color:#991b1b}
+.cardnum.good{background:#dcfce7;border-color:#22c55e;color:#166534}
+.cardnum.warn{background:#fef3c7;border-color:#f59e0b;color:#92400e}
+.cardnum small{font-size:12px;color:#475569;margin-top:4px}
+.arrow{
+  text-align:center;
+  font-size:44px;
+  font-weight:900;
+  color:#dc2626;
+  margin:10px 0;
+}
+.caption{
+  text-align:center;
+  font-size:18px;
+  font-weight:900;
+  color:#7c2d12;
+  margin:8px 0;
+}
+.question{
+  background:#eff6ff;
+  border-left:8px solid #2563eb;
+  padding:18px;
+  border-radius:16px;
+  margin-top:18px;
+  font-size:18px;
+  line-height:1.8;
+}
+.answer{
+  background:#ecfdf5;
+  border-left:8px solid #10b981;
+  padding:18px;
+  border-radius:16px;
+  margin-top:14px;
+  font-size:18px;
+  line-height:1.8;
+}
+.table{
+  width:100%;
+  border-collapse:collapse;
+  margin:16px 0;
+  font-size:17px;
+}
+.table th,.table td{
+  border:1px solid #cbd5e1;
+  padding:10px;
+  text-align:center;
+}
+.table th{background:#eff6ff;color:#1d4ed8}
+.footer{
+  background:#0f172a;
+  color:#e0f2fe;
+  border-radius:22px;
+  padding:22px;
+  line-height:1.8;
+  font-size:18px;
+}
+.keyword{font-weight:900;color:#dc2626}
+</style>
+</head>
+<body>
+<header>
+  <h1>🔎 데이터 정렬·탐색 활용 과학고 창의력 경진대회 문제 3개</h1>
+  <p>코드 없이, 그림과 표를 이용해 실생활·의학·물리·화학·생명·지구과학 데이터를 해석하는 융합 사고 문제</p>
+</header>
+
+<main>
+
+<section class="problem">
+  <span class="badge">문제 1 · 의학 + 실생활 + 정렬</span>
+  <h2>응급실 환자 우선순위 정렬하기</h2>
+
+  <div class="scene">
+    <div class="story">
+      <h3>문제 상황</h3>
+      <p>
+        한 응급실에 동시에 5명의 환자가 도착했습니다.
+        의료진은 환자를 <b>도착 순서</b>가 아니라 <b>위험도 점수</b>가 높은 순서로 먼저 진료하려고 합니다.
+      </p>
+      <p>
+        위험도 점수는 체온, 산소포화도, 맥박, 의식 상태를 종합해 만든 값입니다.
+        점수가 높을수록 더 긴급합니다.
+      </p>
+
+      <table class="table">
+        <tbody><tr><th>환자</th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th></tr>
+        <tr><td>위험도</td><td>72</td><td>95</td><td>61</td><td>88</td><td>79</td></tr>
+      </tbody></table>
+
+      <p>
+        의료진은 이 데이터를 <b class="keyword">내림차순 정렬</b>하여 가장 위험한 환자부터 찾으려 합니다.
+      </p>
+    </div>
+
+    <div class="visual">
+      <svg viewBox="0 0 540 250">
+        <rect x="40" y="160" width="460" height="55" rx="15" fill="#dbeafe"></rect>
+        <rect x="70" y="92" width="90" height="85" rx="18" fill="#fef3c7" stroke="#f59e0b" stroke-width="5"></rect>
+        <rect x="205" y="70" width="90" height="107" rx="18" fill="#fee2e2" stroke="#ef4444" stroke-width="5"></rect>
+        <rect x="340" y="110" width="90" height="67" rx="18" fill="#dcfce7" stroke="#22c55e" stroke-width="5"></rect>
+        <text x="115" y="145" text-anchor="middle" font-size="28" font-weight="900" fill="#92400e">A</text>
+        <text x="250" y="130" text-anchor="middle" font-size="28" font-weight="900" fill="#991b1b">B</text>
+        <text x="385" y="150" text-anchor="middle" font-size="28" font-weight="900" fill="#166534">C</text>
+        <path d="M75 55 L130 30 L185 55" fill="none" stroke="#ef4444" stroke-width="8" stroke-linecap="round"></path>
+        <circle cx="250" cy="38" r="22" fill="#ef4444"></circle>
+        <text x="270" y="232" text-anchor="middle" font-size="23" font-weight="900" fill="#1e3a8a">응급실 위험도 정렬</text>
+      </svg>
+
+      <div class="caption">정렬 전</div>
+      <div class="cards">
+        <div class="cardnum">72<small>A</small></div>
+        <div class="cardnum hot">95<small>B</small></div>
+        <div class="cardnum">61<small>C</small></div>
+        <div class="cardnum warn">88<small>D</small></div>
+        <div class="cardnum">79<small>E</small></div>
+      </div>
+
+      <div class="arrow">⬇️ 위험도 높은 순서로 정렬</div>
+
+      <div class="caption">정렬 후</div>
+      <div class="cards">
+        <div class="cardnum hot">95<small>B</small></div>
+        <div class="cardnum warn">88<small>D</small></div>
+        <div class="cardnum">79<small>E</small></div>
+        <div class="cardnum">72<small>A</small></div>
+        <div class="cardnum good">61<small>C</small></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="question">
+    <b>질문</b><br>
+    ① 위험도 점수를 내림차순으로 정렬했을 때 진료 순서를 쓰시오.<br>
+    ② 응급실에서 정렬 알고리즘을 사용할 때, 단순히 점수만 보고 판단하면 생길 수 있는 문제를 하나 쓰시오.<br>
+    ③ 이 상황에서 정렬은 “계산”을 넘어 어떤 사회적 의미를 갖는가?
+  </div>
+
+  <div class="answer">
+    <b>정답 및 해설</b><br>
+    ① <b>B → D → E → A → C</b><br>
+    ② 점수에 포함되지 않은 특수 상황, 예를 들어 임산부, 영유아, 급격히 악화되는 환자 등을 놓칠 수 있습니다.<br>
+    ③ 정렬은 빠른 의사결정을 돕지만, 생명과 관련된 상황에서는 의료진의 판단과 윤리적 기준도 함께 필요합니다.
+  </div>
+</section>
+
+
+<section class="problem">
+  <span class="badge">문제 2 · 화학 + 지구과학 + 탐색</span>
+  <h2>강물 오염 원인 물질 탐색하기</h2>
+
+  <div class="scene">
+    <div class="story">
+      <h3>문제 상황</h3>
+      <p>
+        어느 강에서 물고기가 집단 폐사했습니다.
+        과학 동아리는 강물 속 이온 농도를 측정하여 오염 원인을 찾으려고 합니다.
+      </p>
+      <p>
+        아래 표는 여러 지점에서 검출된 질산염 농도입니다.
+        기준값은 <b>50 mg/L 이상</b>이면 위험입니다.
+      </p>
+
+      <table class="table">
+        <tbody><tr><th>지점</th><th>P1</th><th>P2</th><th>P3</th><th>P4</th><th>P5</th><th>P6</th></tr>
+        <tr><td>질산염</td><td>18</td><td>24</td><td>37</td><td>53</td><td>68</td><td>92</td></tr>
+      </tbody></table>
+
+      <p>
+        농도 데이터가 이미 오름차순으로 정렬되어 있을 때,
+        연구팀은 <b class="keyword">탐색</b>을 이용해 처음으로 위험 기준을 넘는 지점을 찾으려 합니다.
+      </p>
+    </div>
+
+    <div class="visual">
+      <svg viewBox="0 0 540 260">
+        <path d="M30 175 C95 130,150 220,220 170 S360 120,510 172 L510 245 L30 245 Z" fill="#38bdf8" opacity=".75"></path>
+        <path d="M55 140 C135 90,190 185,260 140 S400 90,490 140" fill="none" stroke="#0284c7" stroke-width="9"></path>
+        <rect x="90" y="72" width="48" height="75" rx="10" fill="#fef3c7" stroke="#f59e0b" stroke-width="4"></rect>
+        <rect x="155" y="52" width="48" height="95" rx="10" fill="#fed7aa" stroke="#f97316" stroke-width="4"></rect>
+        <rect x="220" y="32" width="48" height="115" rx="10" fill="#fecaca" stroke="#ef4444" stroke-width="4"></rect>
+        <circle cx="400" cy="90" r="18" fill="#ef4444"></circle>
+        <circle cx="440" cy="112" r="14" fill="#f97316"></circle>
+        <circle cx="372" cy="122" r="12" fill="#facc15"></circle>
+        <text x="270" y="228" text-anchor="middle" font-size="23" font-weight="900" fill="#1e3a8a">강물 오염 탐색</text>
+      </svg>
+
+      <div class="caption">정렬된 농도 데이터</div>
+      <div class="cards">
+        <div class="cardnum good">18<small>P1</small></div>
+        <div class="cardnum good">24<small>P2</small></div>
+        <div class="cardnum good">37<small>P3</small></div>
+        <div class="cardnum warn">53<small>P4</small></div>
+        <div class="cardnum hot">68<small>P5</small></div>
+        <div class="cardnum hot">92<small>P6</small></div>
+      </div>
+
+      <div class="arrow">🔍 50 이상 처음 등장 지점 찾기</div>
+
+      <div class="cards">
+        <div class="cardnum warn">53<small>P4</small></div>
+      </div>
+      <div class="caption">처음 위험 기준을 넘는 지점</div>
+    </div>
+  </div>
+
+  <div class="question">
+    <b>질문</b><br>
+    ① 처음으로 위험 기준 50 mg/L 이상을 넘는 지점은 어디인가?<br>
+    ② 데이터가 오름차순으로 정렬되어 있으면 위험 지점을 찾는 일이 왜 쉬워지는가?<br>
+    ③ 이 결과를 바탕으로 오염원이 강의 어느 방향에 있을 가능성이 큰지 설명하시오.
+  </div>
+
+  <div class="answer">
+    <b>정답 및 해설</b><br>
+    ① <b>P4</b>입니다. P4의 질산염 농도는 53 mg/L입니다.<br>
+    ② 정렬되어 있으면 낮은 값부터 높은 값으로 순서가 정해져 있어, 기준을 처음 넘는 위치를 빠르게 찾을 수 있습니다.<br>
+    ③ P4 이후 지점에서 농도가 계속 높아지므로, 오염원은 P4 근처 또는 P4보다 상류 쪽에 있을 가능성을 의심할 수 있습니다.
+  </div>
+</section>
+
+
+<section class="problem">
+  <span class="badge">문제 3 · 물리학 + 생명과학 + 정렬·탐색</span>
+  <h2>운동선수 심박수와 산소 회복 능력 분석</h2>
+
+  <div class="scene">
+    <div class="story">
+      <h3>문제 상황</h3>
+      <p>
+        과학고 스포츠 과학 연구팀은 운동 후 회복 능력을 분석하고 있습니다.
+        운동 직후 산소포화도와 심박수가 정상 범위로 돌아오는 시간이 짧을수록 회복 능력이 좋습니다.
+      </p>
+      <p>
+        아래 데이터는 5명의 회복 시간입니다.
+        연구팀은 회복 시간이 짧은 순서로 <b>정렬</b>한 뒤,
+        <b>5분 이하</b>로 회복한 학생을 <b>탐색</b>하려고 합니다.
+      </p>
+
+      <table class="table">
+        <tbody><tr><th>학생</th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th></tr>
+        <tr><td>회복 시간</td><td>7분</td><td>4분</td><td>9분</td><td>5분</td><td>6분</td></tr>
+      </tbody></table>
+    </div>
+
+    <div class="visual">
+      <svg viewBox="0 0 540 260">
+        <rect x="70" y="160" width="400" height="55" rx="18" fill="#e0f2fe"></rect>
+        <path d="M95 135 L135 135 L150 105 L175 170 L200 85 L225 135 L265 135" fill="none" stroke="#ef4444" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"></path>
+        <circle cx="350" cy="120" r="48" fill="#bfdbfe" stroke="#2563eb" stroke-width="6"></circle>
+        <path d="M350 88 L350 122 L378 138" stroke="#1d4ed8" stroke-width="8" stroke-linecap="round"></path>
+        <circle cx="350" cy="120" r="7" fill="#1d4ed8"></circle>
+        <text x="270" y="232" text-anchor="middle" font-size="23" font-weight="900" fill="#1e3a8a">회복 시간 분석</text>
+      </svg>
+
+      <div class="caption">정렬 전</div>
+      <div class="cards">
+        <div class="cardnum">7<small>A</small></div>
+        <div class="cardnum good">4<small>B</small></div>
+        <div class="cardnum hot">9<small>C</small></div>
+        <div class="cardnum good">5<small>D</small></div>
+        <div class="cardnum warn">6<small>E</small></div>
+      </div>
+
+      <div class="arrow">⬇️ 회복 시간 짧은 순서 정렬</div>
+
+      <div class="caption">정렬 후</div>
+      <div class="cards">
+        <div class="cardnum good">4<small>B</small></div>
+        <div class="cardnum good">5<small>D</small></div>
+        <div class="cardnum warn">6<small>E</small></div>
+        <div class="cardnum">7<small>A</small></div>
+        <div class="cardnum hot">9<small>C</small></div>
+      </div>
+
+      <div class="arrow">🔍 5분 이하 탐색</div>
+
+      <div class="cards">
+        <div class="cardnum good">4<small>B</small></div>
+        <div class="cardnum good">5<small>D</small></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="question">
+    <b>질문</b><br>
+    ① 회복 시간이 짧은 순서로 정렬하시오.<br>
+    ② 5분 이하로 회복한 학생을 모두 찾으시오.<br>
+    ③ 회복 시간이 짧다는 이유만으로 운동 능력이 가장 뛰어나다고 결론 내릴 수 있는가? 과학적 이유를 들어 설명하시오.
+  </div>
+
+  <div class="answer">
+    <b>정답 및 해설</b><br>
+    ① <b>B(4분) → D(5분) → E(6분) → A(7분) → C(9분)</b><br>
+    ② <b>B, D</b>입니다.<br>
+    ③ 단정할 수 없습니다. 회복 시간은 중요한 지표이지만 체력, 근육량, 수면, 영양, 심폐 기능, 운동 강도 등 다른 변수도 함께 분석해야 합니다.
+  </div>
+</section>
+
+<section class="footer">
+  <b>총정리</b><br>
+  정렬은 데이터를 의미 있는 순서로 배치하는 과정이고, 탐색은 필요한 값을 찾는 과정입니다.
+  과학 탐구에서는 환자 위험도, 오염 농도, 생체 신호처럼 많은 데이터를 정렬·탐색하여 빠르게 판단합니다.
+  하지만 실제 과학 문제에서는 데이터만 보지 않고, 상황과 원인, 윤리적 판단까지 함께 고려해야 합니다.
+</section>
+
+</main>
+
+
+</body></html>

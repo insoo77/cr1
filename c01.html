@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<!-- saved from url=(0204)file:///C:/Users/user/Downloads/%EB%B9%84%ED%8A%B8%EC%8B%9C%ED%94%84%ED%8A%B8_%EA%B3%BC%ED%95%99%EA%B3%A0_%EC%B0%BD%EC%9D%98%EB%A0%A5_%EB%AC%B8%EC%A0%9C3%EA%B0%9C_%EA%B7%B8%EB%A6%BC%ED%8F%AC%ED%95%A8.html -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>비트 시프트 연산 활용 과학고 창의력 경진대회 문제 3개</title>
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:"Malgun Gothic","Apple SD Gothic Neo",Arial,sans-serif;
+  background:linear-gradient(135deg,#e0f2fe,#fff7ed,#eef2ff);
+  color:#0f172a;
+}
+header{
+  background:linear-gradient(135deg,#1d4ed8,#7c2d12);
+  color:white;
+  padding:28px;
+  text-align:center;
+}
+header h1{margin:0;font-size:30px}
+header p{font-size:18px;line-height:1.6;margin:10px 0 0}
+main{max-width:1180px;margin:0 auto;padding:24px}
+.problem{
+  background:white;
+  border-radius:28px;
+  padding:26px;
+  margin:26px 0;
+  border:1px solid #dbeafe;
+  box-shadow:0 14px 35px rgba(15,23,42,.14);
+}
+h2{color:#1d4ed8;font-size:28px;margin-top:0}
+h3{color:#7c2d12;font-size:22px}
+.scene{
+  display:grid;
+  grid-template-columns:1.05fr 1fr;
+  gap:24px;
+  align-items:start;
+}
+@media(max-width:900px){.scene{grid-template-columns:1fr}}
+.story{
+  background:#f8fafc;
+  border-radius:20px;
+  padding:18px;
+  border:1px solid #e2e8f0;
+  font-size:18px;
+  line-height:1.75;
+}
+.visual{
+  background:#fff7ed;
+  border-radius:22px;
+  padding:18px;
+  border:1px solid #fed7aa;
+}
+.bits{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin:18px 0 12px;
+}
+.bit{
+  width:72px;
+  height:72px;
+  border-radius:18px;
+  background:#dbeafe;
+  border:4px solid #60a5fa;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:32px;
+  font-weight:900;
+  color:#1e3a8a;
+  position:relative;
+}
+.bit.on{
+  background:#fef3c7;
+  border-color:#f59e0b;
+  color:#92400e;
+}
+.label-row{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:8px;
+  text-align:center;
+  font-size:14px;
+  font-weight:800;
+  color:#475569;
+  margin-bottom:16px;
+}
+.arrow{
+  text-align:center;
+  font-size:44px;
+  color:#dc2626;
+  font-weight:900;
+  margin:10px 0;
+}
+.caption{
+  text-align:center;
+  font-size:18px;
+  font-weight:900;
+  color:#7c2d12;
+}
+.question{
+  background:#eff6ff;
+  border-left:8px solid #2563eb;
+  padding:18px;
+  border-radius:16px;
+  margin-top:18px;
+  font-size:18px;
+  line-height:1.8;
+}
+.answer{
+  background:#ecfdf5;
+  border-left:8px solid #10b981;
+  padding:18px;
+  border-radius:16px;
+  margin-top:14px;
+  font-size:18px;
+  line-height:1.8;
+}
+.badge{
+  display:inline-block;
+  padding:7px 12px;
+  background:#ede9fe;
+  color:#5b21b6;
+  border-radius:999px;
+  font-weight:900;
+  margin-bottom:12px;
+}
+svg{
+  width:100%;
+  max-width:520px;
+  display:block;
+  margin:0 auto 12px;
+}
+.small{font-size:15px;color:#64748b;line-height:1.6}
+.footer{
+  background:#0f172a;
+  color:#e0f2fe;
+  border-radius:22px;
+  padding:22px;
+  line-height:1.8;
+  font-size:18px;
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>🔢 비트 시프트 연산 활용 과학고 창의력 경진대회 문제 3개</h1>
+  <p>코드 없이, 그림과 상황만으로 비트 시프트의 의미를 이해하는 융합 사고 문제</p>
+</header>
+
+<main>
+
+<section class="problem">
+  <span class="badge">문제 1 · 공학 + 실생활</span>
+  <h2>스마트 공장 로봇 팔의 작업 모드 바꾸기</h2>
+
+  <div class="scene">
+    <div class="story">
+      <h3>문제 상황</h3>
+      <p>
+        스마트 공장의 로봇 팔은 네 가지 기능을 0과 1로 기억합니다.
+        1은 기능이 켜진 상태, 0은 기능이 꺼진 상태입니다.
+      </p>
+      <p>
+        현재 로봇 팔의 상태는 <b>1010</b>입니다.
+        공장 관리자는 작업 순서를 바꾸기 위해 이 상태를 <b>왼쪽으로 1칸 시프트</b>했습니다.
+      </p>
+      <p class="small">
+        왼쪽 시프트는 왼쪽으로 한 칸 밀고, 오른쪽 빈칸에는 0이 들어오는 이동입니다.
+      </p>
+    </div>
+
+    <div class="visual">
+      <svg viewBox="0 0 520 230">
+        <rect x="35" y="120" width="150" height="42" rx="12" fill="#94a3b8"></rect>
+        <rect x="90" y="70" width="48" height="70" rx="12" fill="#64748b"></rect>
+        <rect x="120" y="60" width="150" height="28" rx="14" fill="#2563eb"></rect>
+        <circle cx="275" cy="74" r="24" fill="#1d4ed8"></circle>
+        <rect x="290" y="64" width="115" height="22" rx="11" fill="#60a5fa"></rect>
+        <circle cx="414" cy="75" r="18" fill="#f59e0b"></circle>
+        <rect x="406" y="92" width="18" height="58" rx="9" fill="#f97316"></rect>
+        <rect x="390" y="148" width="50" height="20" rx="10" fill="#fb923c"></rect>
+        <text x="260" y="205" text-anchor="middle" font-size="24" font-weight="900" fill="#1e3a8a">스마트 로봇 팔</text>
+      </svg>
+
+      <div class="caption">현재 상태: 1010</div>
+      <div class="bits">
+        <div class="bit on">1</div>
+        <div class="bit">0</div>
+        <div class="bit on">1</div>
+        <div class="bit">0</div>
+      </div>
+      <div class="label-row">
+        <div>집기</div><div>이동</div><div>회전</div><div>포장</div>
+      </div>
+
+      <div class="arrow">⬅️ 왼쪽으로 1칸</div>
+
+      <div class="caption">시프트 후: 0100</div>
+      <div class="bits">
+        <div class="bit">0</div>
+        <div class="bit on">1</div>
+        <div class="bit">0</div>
+        <div class="bit">0</div>
+      </div>
+      <div class="label-row">
+        <div>집기</div><div>이동</div><div>회전</div><div>포장</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="question">
+    <b>질문</b><br>
+    ① 시프트 후 켜진 기능은 무엇인가?<br>
+    ② 공장 자동화 시스템에서 비트 시프트가 유용한 이유를 설명하시오.
+  </div>
+
+  <div class="answer">
+    <b>정답 및 해설</b><br>
+    ① <b>이동 기능</b>만 켜져 있습니다.<br>
+    ② 여러 장치의 ON/OFF 상태를 숫자 하나로 저장하고 빠르게 바꿀 수 있기 때문에 자동화 장비 제어에 유용합니다.
+  </div>
+</section>
+
+<section class="problem">
+  <span class="badge">문제 2 · 물리학 + 천문학 + 우주공학</span>
+  <h2>우주 탐사선 태양 전지판 각도 조절</h2>
+
+  <div class="scene">
+    <div class="story">
+      <h3>문제 상황</h3>
+      <p>
+        우주 탐사선은 태양빛을 잘 받기 위해 태양 전지판의 방향을 조절합니다.
+        네 개의 비트는 각각 특정 각도 모드를 나타냅니다.
+      </p>
+      <p>
+        현재 탐사선의 태양 전지판 상태는 <b>1000</b>입니다.
+        태양빛의 방향이 바뀌자 탐사선은 상태를 <b>오른쪽으로 1칸 시프트</b>했습니다.
+      </p>
+      <p class="small">
+        오른쪽 시프트는 오른쪽으로 한 칸 밀고, 맨 오른쪽으로 밀려난 값은 사라집니다.
+      </p>
+    </div>
+
+    <div class="visual">
+      <svg viewBox="0 0 520 250">
+        <circle cx="75" cy="70" r="42" fill="#facc15"></circle>
+        <g stroke="#facc15" stroke-width="5">
+          <line x1="75" y1="10" x2="75" y2="0"></line>
+          <line x1="75" y1="130" x2="75" y2="150"></line>
+          <line x1="15" y1="70" x2="0" y2="70"></line>
+          <line x1="135" y1="70" x2="155" y2="70"></line>
+          <line x1="35" y1="30" x2="20" y2="15"></line>
+          <line x1="115" y1="30" x2="130" y2="15"></line>
+          <line x1="35" y1="110" x2="20" y2="125"></line>
+          <line x1="115" y1="110" x2="130" y2="125"></line>
+        </g>
+        <rect x="300" y="96" width="90" height="58" rx="14" fill="#475569"></rect>
+        <rect x="205" y="80" width="85" height="90" rx="8" fill="#60a5fa" stroke="#1d4ed8" stroke-width="5"></rect>
+        <rect x="400" y="80" width="85" height="90" rx="8" fill="#60a5fa" stroke="#1d4ed8" stroke-width="5"></rect>
+        <line x1="290" y1="125" x2="300" y2="125" stroke="#94a3b8" stroke-width="8"></line>
+        <line x1="390" y1="125" x2="400" y2="125" stroke="#94a3b8" stroke-width="8"></line>
+        <text x="345" y="215" text-anchor="middle" font-size="24" font-weight="900" fill="#1e3a8a">태양 전지판 조절</text>
+      </svg>
+
+      <div class="caption">현재 상태: 1000</div>
+      <div class="bits">
+        <div class="bit on">1</div>
+        <div class="bit">0</div>
+        <div class="bit">0</div>
+        <div class="bit">0</div>
+      </div>
+      <div class="label-row">
+        <div>90°</div><div>45°</div><div>22°</div><div>11°</div>
+      </div>
+
+      <div class="arrow">➡️ 오른쪽으로 1칸</div>
+
+      <div class="caption">시프트 후: 0100</div>
+      <div class="bits">
+        <div class="bit">0</div>
+        <div class="bit on">1</div>
+        <div class="bit">0</div>
+        <div class="bit">0</div>
+      </div>
+      <div class="label-row">
+        <div>90°</div><div>45°</div><div>22°</div><div>11°</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="question">
+    <b>질문</b><br>
+    ① 시프트 후 선택된 태양 전지판 각도는 몇 도인가?<br>
+    ② 우주 탐사선에서 이런 빠른 상태 변경이 중요한 이유를 쓰시오.
+  </div>
+
+  <div class="answer">
+    <b>정답 및 해설</b><br>
+    ① <b>45°</b>입니다.<br>
+    ② 우주에서는 태양빛 방향, 전력량, 자세 변화가 빠르게 달라지므로 전지판 방향을 빠르게 바꾸어 에너지를 안정적으로 얻어야 합니다.
+  </div>
+</section>
+
+<section class="problem">
+  <span class="badge">문제 3 · 생명과학 + 화학 + 지구환경</span>
+  <h2>환경 DNA 센서의 위험 신호 이동</h2>
+
+  <div class="scene">
+    <div class="story">
+      <h3>문제 상황</h3>
+      <p>
+        한 연구팀은 강물 속 미생물 DNA와 화학 오염 신호를 동시에 관찰하는 센서를 만들었습니다.
+        네 개의 비트는 서로 다른 위험 신호를 나타냅니다.
+      </p>
+      <p>
+        현재 센서 상태는 <b>0011</b>입니다.
+        연구팀은 위험 신호를 상위 경보 단계로 올리기 위해 상태를 <b>왼쪽으로 2칸 시프트</b>했습니다.
+      </p>
+      <p class="small">
+        왼쪽으로 2칸 이동하면 정보가 더 높은 자리로 올라가며, 오른쪽에는 0이 채워집니다.
+      </p>
+    </div>
+
+    <div class="visual">
+      <svg viewBox="0 0 520 250">
+        <path d="M40 170 C110 120,170 220,250 170 S390 120,480 170 L480 230 L40 230 Z" fill="#38bdf8" opacity=".75"></path>
+        <path d="M65 140 C140 95,190 185,265 140 S405 95,465 140" fill="none" stroke="#0ea5e9" stroke-width="8"></path>
+        <circle cx="160" cy="90" r="20" fill="#22c55e"></circle>
+        <circle cx="205" cy="108" r="15" fill="#84cc16"></circle>
+        <circle cx="330" cy="85" r="17" fill="#f97316"></circle>
+        <circle cx="370" cy="112" r="14" fill="#ef4444"></circle>
+        <path d="M120 45 C160 20,205 70,245 45 S325 20,365 45" fill="none" stroke="#7c3aed" stroke-width="7"></path>
+        <path d="M120 75 C160 100,205 50,245 75 S325 100,365 75" fill="none" stroke="#7c3aed" stroke-width="7"></path>
+        <text x="260" y="215" text-anchor="middle" font-size="24" font-weight="900" fill="#1e3a8a">환경 DNA 센서</text>
+      </svg>
+
+      <div class="caption">현재 상태: 0011</div>
+      <div class="bits">
+        <div class="bit">0</div>
+        <div class="bit">0</div>
+        <div class="bit on">1</div>
+        <div class="bit on">1</div>
+      </div>
+      <div class="label-row">
+        <div>심각</div><div>주의</div><div>미생물</div><div>화학</div>
+      </div>
+
+      <div class="arrow">⬅️⬅️ 왼쪽으로 2칸</div>
+
+      <div class="caption">시프트 후: 1100</div>
+      <div class="bits">
+        <div class="bit on">1</div>
+        <div class="bit on">1</div>
+        <div class="bit">0</div>
+        <div class="bit">0</div>
+      </div>
+      <div class="label-row">
+        <div>심각</div><div>주의</div><div>미생물</div><div>화학</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="question">
+    <b>질문</b><br>
+    ① 시프트 후 켜진 경보 단계는 무엇인가?<br>
+    ② 생명과학·화학·환경 관측에서 비트 시프트 방식이 도움이 되는 까닭을 설명하시오.
+  </div>
+
+  <div class="answer">
+    <b>정답 및 해설</b><br>
+    ① <b>심각</b>과 <b>주의</b> 경보가 켜졌습니다.<br>
+    ② 많은 센서 신호를 0과 1로 단순하게 표현하면 대량의 환경 데이터를 빠르게 저장하고 위험 단계를 즉시 바꿀 수 있습니다.
+  </div>
+</section>
+
+<section class="footer">
+  <b>정리</b><br>
+  비트 시프트는 단순한 숫자 계산이 아니라, 로봇 제어·우주 탐사·환경 센서처럼 여러 상태를 빠르게 바꾸는 데 사용할 수 있습니다.
+  과학고 창의력 문제에서는 “0과 1의 이동이 실제 장치나 과학 현상에서 어떤 의미를 가지는가?”를 해석하는 능력이 중요합니다.
+</section>
+
+</main>
+
+
+</body></html>

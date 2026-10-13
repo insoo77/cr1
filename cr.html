@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<!-- saved from url=(0050)file:///C:/Users/user/Downloads/preview%20(8).html -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>과학고 창의력 경진대회 20문항</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:"Malgun Gothic","Apple SD Gothic Neo",Arial,sans-serif;background:linear-gradient(135deg,#eef2ff,#ecfeff,#fff7ed);color:#0f172a}
+header{background:linear-gradient(135deg,#1d4ed8,#0f766e,#7c2d12);color:white;padding:30px;text-align:center}
+header h1{margin:0;font-size:32px} header p{margin:10px 0 0;font-size:18px;color:#dbeafe}
+main{max-width:1180px;margin:0 auto;padding:24px}
+.student{background:white;border-radius:24px;padding:20px;margin-bottom:22px;border:1px solid #dbeafe;box-shadow:0 10px 26px rgba(15,23,42,.12);display:grid;grid-template-columns:1fr 1fr auto;gap:12px;align-items:end}
+label{font-weight:900;color:#1e3a8a} input{width:100%;padding:13px;border:1px solid #cbd5e1;border-radius:14px;font-size:16px}
+button{border:0;border-radius:14px;padding:13px 18px;font-weight:900;font-size:16px;cursor:pointer;color:white;background:#1d4ed8} button:hover{filter:brightness(.95)}
+.problem{background:white;border-radius:26px;padding:24px;margin:22px 0;border:1px solid #dbeafe;box-shadow:0 12px 30px rgba(15,23,42,.12)}
+.badge{display:inline-block;background:#ede9fe;color:#5b21b6;border-radius:999px;padding:7px 13px;font-weight:900;margin-bottom:10px}
+.problem h2{color:#1d4ed8;margin:0 0 12px;font-size:24px}
+.scene{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:stretch}
+@media(max-width:850px){.scene{grid-template-columns:1fr}.student{grid-template-columns:1fr}}
+.story{background:#f8fafc;border:1px solid #e2e8f0;border-radius:18px;padding:18px;line-height:1.8;font-size:17px}
+.visual{background:#fff7ed;border:1px solid #fed7aa;border-radius:18px;padding:18px;display:flex;align-items:center;justify-content:center;min-height:190px}
+.qbox{margin-top:16px;background:#eff6ff;border-left:8px solid #2563eb;border-radius:16px;padding:16px;font-size:18px;line-height:1.7}
+.answer-input{margin-top:10px}
+.result{margin-top:10px;padding:12px;border-radius:14px;display:none;line-height:1.7}
+.correct{background:#dcfce7;color:#166534;border:1px solid #22c55e}.wrong{background:#fee2e2;color:#991b1b;border:1px solid #ef4444}
+.solution{margin-top:10px;background:#fffaf0;border:1px solid #fed7aa;border-radius:14px;padding:13px;display:none;line-height:1.75}
+.scoreboard{position:sticky;bottom:0;background:#0f172a;color:#e0f2fe;padding:18px;border-radius:22px 22px 0 0;display:flex;gap:10px;flex-wrap:wrap;justify-content:space-between;align-items:center}
+.scoreboard strong{font-size:22px;color:white}
+svg{width:100%;max-width:430px;height:auto}.bit{display:inline-flex;width:54px;height:54px;border-radius:14px;align-items:center;justify-content:center;margin:4px;background:#dbeafe;border:3px solid #60a5fa;font-weight:900;font-size:24px;color:#1e3a8a}.on{background:#fef3c7;border-color:#f59e0b;color:#92400e}.card{display:inline-block;min-width:62px;padding:12px;margin:5px;border-radius:14px;background:#dbeafe;border:3px solid #60a5fa;text-align:center;font-weight:900}.hot{background:#fee2e2;border-color:#ef4444;color:#991b1b}.good{background:#dcfce7;border-color:#22c55e;color:#166534}.warn{background:#fef3c7;border-color:#f59e0b;color:#92400e}.caption{text-align:center;font-weight:900;color:#7c2d12}.bigarrow{text-align:center;font-size:34px;color:#dc2626;font-weight:900}
+</style>
+</head>
+<body>
+<header>
+  <h1>🏆 과학고 창의력 경진대회 문제 20문항</h1>
+  <p>10개 주제에서 각각 2문항씩 출제 · 학번_이름_창의력_점수_응시시각.txt 저장 · 상세풀이 포함</p>
+</header>
+<main>
+<section class="student">
+  <div><label for="sid">학번</label><input id="sid" placeholder="예: 1320"></div>
+  <div><label for="sname">이름</label><input id="sname" placeholder="예: 김인수"></div>
+  <button onclick="gradeQuiz()">채점하기</button>
+</section>
+
+<section class="problem" id="q1">
+  <span class="badge">문항 1 · 비트 시프트</span>
+  <h2>스마트 공장 로봇 팔</h2>
+  <div class="scene">
+    <div class="story"><b>문제 상황</b><br>로봇 팔의 기능 상태가 1010입니다. 왼쪽으로 1칸 시프트하면 새 상태가 됩니다.</div>
+    <div class="visual"><div><span class="bit on">1</span><span class="bit">0</span><span class="bit on">1</span><span class="bit">0</span><div class="bigarrow">⇄</div><span class="bit">0</span><span class="bit on">1</span><span class="bit">0</span><span class="bit">0</span></div></div>
+  </div>
+  <div class="qbox">
+    <b>단답형 문제</b><br>왼쪽으로 1칸 시프트한 결과 비트 4자리를 쓰시오.
+    <input class="answer-input" id="a1" placeholder="정답 입력">
+    <div class="result" id="r1"></div>
+    <div class="solution" id="s1"><b>상세 풀이</b><br>1010을 왼쪽으로 한 칸 밀면 맨 왼쪽 1은 사라지고 오른쪽에 0이 들어와 0100이 됩니다.<br><b>인정 정답:</b> 0100</div>
+  </div>
+</section>
+
+<section class="problem" id="q2">
+  <span class="badge">문항 2 · 비트 시프트</span>
+  <h2>우주 탐사선 전지판</h2>
+  <div class="scene">
+    <div class="story"><b>문제 상황</b><br>태양 전지판 각도 상태가 1000입니다. 오른쪽으로 1칸 시프트하면 0100이 됩니다. 각도 표시는 1000=90도, 0100=45도입니다.</div>
+    <div class="visual"><div><span class="bit on">1</span><span class="bit">0</span><span class="bit on">1</span><span class="bit">0</span><div class="bigarrow">⇄</div><span class="bit">0</span><span class="bit on">1</span><span class="bit">0</span><span class="bit">0</span></div></div>
+  </div>
+  <div class="qbox">
+    <b>단답형 문제</b><br>오른쪽 시프트 후 선택된 각도를 숫자만 쓰시오.
+    <input class="answer-input" id="a2" placeholder="정답 입력">
+    <div class="result" id="r2"></div>
+    <div class="solution" id="s2"><b>상세 풀이</b><br>1000을 오른쪽으로 1칸 밀면 0100이 되고, 문제 조건에서 0100은 45도를 뜻합니다.<br><b>인정 정답:</b> 45, 45도</div>
+  </div>
+</section>
+
+<section class="problem" id="q3">
+  <span class="badge">문항 3 · 정렬·탐색</span>
+  <h2>응급실 위험도 정렬</h2>
+  <div class="scene">
+    <div class="story"><b>문제 상황</b><br>환자 위험도는 A=72, B=95, C=61, D=88, E=79입니다. 위험도가 높은 순서대로 진료합니다.</div>
+    <div class="visual"><div><span class="card">72<br>A</span><span class="card hot">95<br>B</span><span class="card">61<br>C</span><span class="card warn">88<br>D</span><span class="card">79<br>E</span><p class="caption">정렬·탐색</p></div></div>
+  </div>
+  <div class="qbox">
+    <b>단답형 문제</b><br>가장 먼저 진료해야 할 환자 기호를 쓰시오.
+    <input class="answer-input" id="a3" placeholder="정답 입력">
+    <div class="result" id="r3"></div>
+    <div class="solution" id="s3"><b>상세 풀이</b><br>가장 큰 위험도 점수는 B의 95점이므로 B가 가장 먼저 진료 대상입니다.<br><b>인정 정답:</b> B, b</div>
+  </div>
+</section>
+
+<section class="problem" id="q4">
+  <span class="badge">문항 4 · 정렬·탐색</span>
+  <h2>하천 오염 탐색</h2>
+  <div class="scene">
+    <div class="story"><b>문제 상황</b><br>질산염 농도가 P1=18, P2=24, P3=37, P4=53, P5=68입니다. 위험 기준은 50 이상입니다.</div>
+    <div class="visual"><div><span class="card">72<br>A</span><span class="card hot">95<br>B</span><span class="card">61<br>C</span><span class="card warn">88<br>D</span><span class="card">79<br>E</span><p class="caption">정렬·탐색</p></div></div>
+  </div>
+  <div class="qbox">
+    <b>단답형 문제</b><br>처음으로 위험 기준을 넘는 지점 기호를 쓰시오.
+    <input class="answer-input" id="a4" placeholder="정답 입력">
+    <div class="result" id="r4"></div>
+    <div class="solution" id="s4"><b>상세 풀이</b><br>P1~P3는 50 미만이고 P4가 53으로 처음 50 이상이 됩니다.<br><b>인정 정답:</b> P4, p4</div>
+  </div>
+</section>
+
+<section class="problem" id="q5">
+  <span class="badge">문항 5 · OOP 객체지향</span>
+  <h2>스마트 온실 작물</h2>
+  <div class="scene">
+    <div class="story"><b>문제 상황</b><br>토마토, 상추, 딸기는 모두 작물이라는 공통 설계도로 관리됩니다.</div>
+    <div class="visual"><svg viewBox="0 0 420 210"><rect x="130" y="20" width="160" height="60" rx="16" fill="#dbeafe" stroke="#2563eb" stroke-width="5"></rect><text x="210" y="57" text-anchor="middle" font-size="20" font-weight="900">클래스</text><line x1="210" y1="80" x2="90" y2="145" stroke="#64748b" stroke-width="4"></line><line x1="210" y1="80" x2="210" y2="145" stroke="#64748b" stroke-width="4"></line><line x1="210" y1="80" x2="330" y2="145" stroke="#64748b" stroke-width="4"></line><circle cx="90" cy="160" r="35" fill="#fee2e2" stroke="#ef4444" stroke-width="5"></circle><circle cx="210" cy="160" r="35" fill="#dcfce7" stroke="#22c55e" stroke-width="5"></circle><circle cx="330" cy="160" r="35" fill="#fef3c7" stroke="#f59e0b" stroke-width="5"></circle><text x="90" y="167" text-anchor="middle" font-size="15" font-weight="900">객체</text><text x="210" y="167" text-anchor="middle" font-size="15" font-weight="900">객체</text><text x="330" y="167" text-anchor="middle" font-size="15" font-weight="900">객체</text></svg></div>
+  </div>
+  <div class="qbox">
+    <b>단답형 문제</b><br>OOP에서 객체를 만드는 공통 설계도를 무엇이라고 하는가?
+    <input class="answer-input" id="a5" placeholder="정답 입력">
+    <div class="result" id="r5"></div>
+    <div class="solution" id="s5"><b>상세 풀이</b><br>객체를 만들기 위한 공통 설계도를 클래스라고 합니다.<br><b>인정 정답:</b> 클래스, class</div>
+  </div>
+</section>
+
+<section class="problem" id="q6">
+  <span class="badge">문항 6 · OOP 객체지향</span>
+  <h2>지진 감지 센서</h2>
+  <div class="scene">
+    <div class="story"><b>문제 상황</b><br>S1, S2, S3, S4는 모두 지진센서라는 설계도로 만들어졌고 각자 위치와 흔들림 값을 가집니다.</div>
+    <div class="visual"><svg viewBox="0 0 420 210"><rect x="130" y="20" width="160" height="60" rx="16" fill="#dbeafe" stroke="#2563eb" stroke-width="5"></rect><text x="210" y="57" text-anchor="middle" font-size="20" font-weight="900">클래스</text><line x1="210" y1="80" x2="90" y2="145" stroke="#64748b" stroke-width="4"></line><line x1="210" y1="80" x2="210" y2="145" stroke="#64748b" stroke-width="4"></line><line x1="210" y1="80" x2="330" y2="145" stroke="#64748b" stroke-width="4"></line><circle cx="90" cy="160" r="35" fill="#fee2e2" stroke="#ef4444" stroke-width="5"></circle><circle cx="210" cy="160" r="35" fill="#dcfce7" stroke="#22c55e" stroke-width="5"></circle><circle cx="330" cy="160" r="35" fill="#fef3c7" stroke="#f59e0b" stroke-width="5"></circle><text x="90" y="167" text-anchor="middle" font-size="15" font-weight="900">객체</text><text x="210" y="167" text-anchor="middle" font-size="15" font-weight="900">객체</text><text x="330" y="167" text-anchor="middle" font-size="15" font-weight="900">객체</text></svg></div>
+  </div>
+  <div class="qbox">
+    <b>단답형 문제</b><br>S1, S2, S3, S4는 OOP 관점에서 무엇인가?
+    <input class="answer-input" id="a6" placeholder="정답 입력">
+    <div class="result" id="r6"></div>
+    <div class="solution" id="s6"><b>상세 풀이</b><br>클래스에서 만들어진 개별 대상은 객체입니다.<br><b>인정 정답:</b> 객체, object, 오브젝트</div>
+  </div>
+</section>
+
+<section class="problem" id="q7">
+  <span class="badge">문항 7 · 제어문</span>
+  <h2>마라톤 탈수 판단</h2>
+  <div class="scene">
+    <div class="story"><b>문제 상황</b><br>체온이 38도 이상이고 땀 배출량이 많으면 수분 보충을 해야 합니다. 선수 상태는 체온 38.5도, 심박수 165, 땀 많음입니다.</div>
+    <div class="visual"><svg viewBox="0 0 420 210"><rect x="120" y="20" width="180" height="44" rx="14" fill="#dbeafe" stroke="#2563eb" stroke-width="4"></rect><text x="210" y="49" text-anchor="middle" font-size="17" font-weight="900">입력</text><path d="M210 66 L210 95" stroke="#dc2626" stroke-width="5"></path><polygon points="210,90 320,135 210,180 100,135" fill="#fef3c7" stroke="#f59e0b" stroke-width="5"></polygon><text x="210" y="140" text-anchor="middle" font-size="17" font-weight="900">조건 판단</text></svg></div>
+  </div>
+  <div class="qbox">
+    <b>단답형 문제</b><br>이 선수에게 필요한 조치를 쓰시오.
+    <input class="answer-input" id="a7" placeholder="정답 입력">
+    <div class="result" id="r7"></div>
+    <div class="solution" id="s7"><b>상세 풀이</b><br>체온이 38도 이상이고 땀이 많으므로 수분 보충 조건에 해당합니다.<br><b>인정 정답:</b> 수분 보충, 수분보충, 물 보충, 물보충</div>
+  </div>
+</section>
+
+<section class="problem" id="q8">
+  <span class="badge">문항 8 · 제어문</span>
+  <h2>산성비 중화 실험</h2>
+  <div class="scene">
+    <div class="story"><b>문제 상황</b><br>pH가 6.5 이상이면 중화 실험을 멈춥니다. pH 변화는 4.2, 5.0, 5.8, 6.6, 7.1입니다.</div>
+    <div class="visual"><svg viewBox="0 0 420 210"><rect x="120" y="20" width="180" height="44" rx="14" fill="#dbeafe" stroke="#2563eb" stroke-width="4"></rect><text x="210" y="49" text-anchor="middle" font-size="17" font-weight="900">입력</text><path d="M210 66 L210 95" stroke="#dc2626" stroke-width="5"></path><polygon points="210,90 320,135 210,180 100,135" fill="#fef3c7" stroke="#f59e0b" stroke-width="5"></polygon><text x="210" y="140" text-anchor="middle" font-size="17" font-weight="900">조건 판단</text></svg></div>
+  </div>
+  <div class="qbox">
+    <b>단답형 문제</b><br>실험을 멈추는 최소 투입 횟수를 숫자만 쓰시오.
+    <input class="answer-input" id="a8" placeholder="정답 입력">
+    <div class="result" id="r8"></div>
+    <div class="solution" id="s8"><b>상세 풀이</b><br>0회 4.2, 1회 5.0, 2회 5.8이고 3회에 6.6으로 6.5 이상이 됩니다.<br><b>인정 정답:</b> 3, 3회</div>
+  </div>
+</section>
+
+<section class="problem" id="q9">
+  <span class="badge">문항 9 · 자료구조</span>
+  <h2>실험실 시료 스택</h2>
+  <div class="scene">
+    <div class="story"><b>문제 상황</b><br>시료 A, B, C, D를 차례대로 쌓았습니다. 스택은 나중에 들어온 것이 먼저 나갑니다.</div>
+    <div class="visual"><div><span class="card good">D</span><br><span class="card good">C</span><br><span class="card good">B</span><br><span class="card good">A</span><p class="caption">스택·큐 구조</p></div></div>
+  </div>
+  <div class="qbox">
+    <b>단답형 문제</b><br>가장 먼저 꺼내지는 시료의 기호를 쓰시오.
+    <input class="answer-input" id="a9" placeholder="정답 입력">
+    <div class="result" id="r9"></div>
+    <div class="solution" id="s9"><b>상세 풀이</b><br>스택은 LIFO 구조이므로 마지막에 들어간 D가 가장 먼저 나옵니다.<br><b>인정 정답:</b> D, d</div>
+  </div>
+</section>
+
+<section class="problem" id="q10">
+  <span class="badge">문항 10 · 자료구조</span>
+  <h2>부상 선수 대기열</h2>
+  <div class="scene">
+    <div class="story"><b>문제 상황</b><br>부상 선수 A, B, C가 순서대로 도착했습니다. 큐는 먼저 들어온 사람이 먼저 나갑니다.</div>
+    <div class="visual"><div><span class="card good">D</span><br><span class="card good">C</span><br><span class="card good">B</span><br><span class="card good">A</span><p class="caption">스택·큐 구조</p></div></div>
+  </div>
+  <div class="qbox">
+    <b>단답형 문제</b><br>큐 구조에서 가장 먼저 처치되는 선수 기호를 쓰시오.
+    <input class="answer-input" id="a10" placeholder="정답 입력">
+    <div class="result" id="r10"></div>
+    <div class="solution" id="s10"><b>상세 풀이</b><br>큐는 FIFO 구조이므로 가장 먼저 들어온 A가 가장 먼저 처리됩니다.<br><b>인정 정답:</b> A, a</div>
+  </div>
+</section>
+
+<section class="problem" id="q11">
+  <span class="badge">문항 11 · 함수와 모듈</span>
+  <h2>운동 피로도 판단</h2>
+  <div class="scene">
+    <div class="story"><b>문제 상황</b><br>심박수, 운동 시간, 수면 시간을 입력받아 피로도를 판단하는 작은 기능 단위를 설계합니다.</div>
+    <div class="visual"><svg viewBox="0 0 420 210"><rect x="25" y="70" width="105" height="70" rx="16" fill="#fef3c7" stroke="#f59e0b" stroke-width="5"></rect><text x="78" y="110" text-anchor="middle" font-size="18" font-weight="900">입력</text><path d="M135 105 L185 105" stroke="#dc2626" stroke-width="6"></path><rect x="190" y="55" width="120" height="100" rx="18" fill="#dbeafe" stroke="#2563eb" stroke-width="5"></rect><text x="250" y="110" text-anchor="middle" font-size="20" font-weight="900">처리</text><path d="M315 105 L360 105" stroke="#dc2626" stroke-width="6"></path><rect x="365" y="70" width="45" height="70" rx="16" fill="#dcfce7" stroke="#22c55e" stroke-width="5"></rect></svg></div>
+  </div>
+  <div class="qbox">
+    <b>단답형 문제</b><br>입력을 받아 처리하고 결과를 내는 작은 기능 단위를 무엇이라고 하는가?
+    <input class="answer-input" id="a11" placeholder="정답 입력">
+    <div class="result" id="r11"></div>
+    <div class="solution" id="s11"><b>상세 풀이</b><br>입력값을 받아 정해진 처리를 한 뒤 결과를 내는 단위를 함수라고 합니다.<br><b>인정 정답:</b> 함수, function</div>
+  </div>
+</section>
+
+<section class="problem" id="q12">
+  <span class="badge">문항 12 · 함수와 모듈</span>
+  <h2>수질 분석 시스템</h2>
+  <div class="scene">
+    <div class="story"><b>문제 상황</b><br>pH 분석, 산소 분석, 질산염 분석처럼 관련 기능을 묶어 독립적인 도구 상자로 만들었습니다.</div>
+    <div class="visual"><svg viewBox="0 0 420 210"><rect x="25" y="70" width="105" height="70" rx="16" fill="#fef3c7" stroke="#f59e0b" stroke-width="5"></rect><text x="78" y="110" text-anchor="middle" font-size="18" font-weight="900">입력</text><path d="M135 105 L185 105" stroke="#dc2626" stroke-width="6"></path><rect x="190" y="55" width="120" height="100" rx="18" fill="#dbeafe" stroke="#2563eb" stroke-width="5"></rect><text x="250" y="110" text-anchor="middle" font-size="20" font-weight="900">처리</text><path d="M315 105 L360 105" stroke="#dc2626" stroke-width="6"></path><rect x="365" y="70" width="45" height="70" rx="16" fill="#dcfce7" stroke="#22c55e" stroke-width="5"></rect></svg></div>
+  </div>
+  <div class="qbox">
+    <b>단답형 문제</b><br>관련 함수와 기능을 묶은 독립적인 도구 상자를 무엇이라고 하는가?
+    <input class="answer-input" id="a12" placeholder="정답 입력">
+    <div class="result" id="r12"></div>
+    <div class="solution" id="s12"><b>상세 풀이</b><br>관련 있는 기능을 묶어 재사용하기 쉽게 만든 단위를 모듈이라고 합니다.<br><b>인정 정답:</b> 모듈, module</div>
+  </div>
+</section>
+
+<section class="problem" id="q13">
+  <span class="badge">문항 13 · 파일 입출력·예외 처리</span>
+  <h2>소수 데이터 파일 검사</h2>
+  <div class="scene">
+    <div class="story"><b>문제 상황</b><br>파일에 17, -5, 23, abc가 들어 있습니다. abc는 숫자가 아니라 분석할 수 없습니다.</div>
+    <div class="visual"><svg viewBox="0 0 420 210"><rect x="40" y="40" width="100" height="130" rx="16" fill="#fef3c7" stroke="#f59e0b" stroke-width="5"></rect><text x="90" y="110" text-anchor="middle" font-size="18" font-weight="900">파일</text><path d="M145 105 L200 105" stroke="#dc2626" stroke-width="6"></path><circle cx="245" cy="105" r="50" fill="#dbeafe" stroke="#2563eb" stroke-width="5"></circle><text x="245" y="112" text-anchor="middle" font-size="18" font-weight="900">검사</text><path d="M295 105 L350 105" stroke="#dc2626" stroke-width="6"></path><rect x="355" y="70" width="45" height="70" rx="14" fill="#dcfce7" stroke="#22c55e" stroke-width="5"></rect></svg></div>
+  </div>
+  <div class="qbox">
+    <b>단답형 문제</b><br>abc 같은 값 때문에 프로그램이 멈추지 않게 하는 처리를 무엇이라고 하는가?
+    <input class="answer-input" id="a13" placeholder="정답 입력">
+    <div class="result" id="r13"></div>
+    <div class="solution" id="s13"><b>상세 풀이</b><br>오류가 생겨도 전체 실행을 멈추지 않게 처리하는 것을 예외 처리라고 합니다.<br><b>인정 정답:</b> 예외 처리, 예외처리, exception handling</div>
+  </div>
+</section>
+
+<section class="problem" id="q14">
+  <span class="badge">문항 14 · 파일 입출력·예외 처리</span>
+  <h2>낙하 실험 이상값</h2>
+  <div class="scene">
+    <div class="story"><b>문제 상황</b><br>낙하 실험 위치 데이터에 -999가 포함되어 있습니다. -999는 센서 실패 표시값입니다.</div>
+    <div class="visual"><svg viewBox="0 0 420 210"><rect x="40" y="40" width="100" height="130" rx="16" fill="#fef3c7" stroke="#f59e0b" stroke-width="5"></rect><text x="90" y="110" text-anchor="middle" font-size="18" font-weight="900">파일</text><path d="M145 105 L200 105" stroke="#dc2626" stroke-width="6"></path><circle cx="245" cy="105" r="50" fill="#dbeafe" stroke="#2563eb" stroke-width="5"></circle><text x="245" y="112" text-anchor="middle" font-size="18" font-weight="900">검사</text><path d="M295 105 L350 105" stroke="#dc2626" stroke-width="6"></path><rect x="355" y="70" width="45" height="70" rx="14" fill="#dcfce7" stroke="#22c55e" stroke-width="5"></rect></svg></div>
+  </div>
+  <div class="qbox">
+    <b>단답형 문제</b><br>이상값 -999를 저장해야 할 파일의 성격을 한 단어로 쓰시오.
+    <input class="answer-input" id="a14" placeholder="정답 입력">
+    <div class="result" id="r14"></div>
+    <div class="solution" id="s14"><b>상세 풀이</b><br>센서 실패값은 정상 결과와 분리해 오류 파일 또는 오류 로그에 기록해야 합니다.<br><b>인정 정답:</b> 오류, 오류파일, 오류 파일, error, 로그, 오류 로그</div>
+  </div>
+</section>
+
+<section class="problem" id="q15">
+  <span class="badge">문항 15 · 데이터분석</span>
+  <h2>반도체 웨이퍼 불량률</h2>
+  <div class="scene">
+    <div class="story"><b>문제 상황</b><br>공정별 불량률은 A=2%, B=3%, C=9%, D=13%, E=16%입니다.</div>
+    <div class="visual"><div><span class="card">A<br>2</span><span class="card">B<br>3</span><span class="card warn">C<br>9</span><span class="card hot">D<br>13</span><span class="card hot">E<br>16</span><p class="caption">패턴 분석</p></div></div>
+  </div>
+  <div class="qbox">
+    <b>단답형 문제</b><br>불량률이 처음 크게 증가하기 시작한 공정 기호를 쓰시오.
+    <input class="answer-input" id="a15" placeholder="정답 입력">
+    <div class="result" id="r15"></div>
+    <div class="solution" id="s15"><b>상세 풀이</b><br>A와 B는 낮지만 C에서 9%로 크게 증가하므로 C부터 이상 구간을 의심할 수 있습니다.<br><b>인정 정답:</b> C, c</div>
+  </div>
+</section>
+
+<section class="problem" id="q16">
+  <span class="badge">문항 16 · 데이터분석</span>
+  <h2>해양 산소 농도</h2>
+  <div class="scene">
+    <div class="story"><b>문제 상황</b><br>해역별 산소 농도는 A=9.2, B=8.5, C=7.8, D=6.9, E=5.8입니다. 위험 기준은 6.0 이하입니다.</div>
+    <div class="visual"><div><span class="card">A<br>2</span><span class="card">B<br>3</span><span class="card warn">C<br>9</span><span class="card hot">D<br>13</span><span class="card hot">E<br>16</span><p class="caption">패턴 분석</p></div></div>
+  </div>
+  <div class="qbox">
+    <b>단답형 문제</b><br>위험 기준에 해당하는 해역 기호를 쓰시오.
+    <input class="answer-input" id="a16" placeholder="정답 입력">
+    <div class="result" id="r16"></div>
+    <div class="solution" id="s16"><b>상세 풀이</b><br>E 해역은 산소 농도 5.8로 6.0 이하이므로 위험 구간입니다.<br><b>인정 정답:</b> E, e</div>
+  </div>
+</section>
+
+<section class="problem" id="q17">
+  <span class="badge">문항 17 · 사물인터넷 IoT</span>
+  <h2>교실 공기질 환기</h2>
+  <div class="scene">
+    <div class="story"><b>문제 상황</b><br>CO₂ 1450ppm, 미세먼지 42, 습도 68%로 모두 기준보다 높습니다.</div>
+    <div class="visual"><svg viewBox="0 0 420 210"><rect x="35" y="70" width="90" height="70" rx="16" fill="#fef3c7" stroke="#f59e0b" stroke-width="5"></rect><text x="80" y="110" text-anchor="middle" font-size="17" font-weight="900">센서</text><path d="M130 105 L185 105" stroke="#dc2626" stroke-width="6"></path><rect x="190" y="70" width="90" height="70" rx="16" fill="#ede9fe" stroke="#7c3aed" stroke-width="5"></rect><text x="235" y="110" text-anchor="middle" font-size="17" font-weight="900">판단</text><path d="M285 105 L340 105" stroke="#dc2626" stroke-width="6"></path><circle cx="365" cy="105" r="35" fill="#dcfce7" stroke="#22c55e" stroke-width="5"></circle><text x="365" y="112" text-anchor="middle" font-size="17" font-weight="900">제어</text></svg></div>
+  </div>
+  <div class="qbox">
+    <b>단답형 문제</b><br>IoT 시스템이 작동시켜야 할 장치를 쓰시오.
+    <input class="answer-input" id="a17" placeholder="정답 입력">
+    <div class="result" id="r17"></div>
+    <div class="solution" id="s17"><b>상세 풀이</b><br>공기질 수치가 높으므로 환기팬을 켜거나 창문을 열어 환기해야 합니다.<br><b>인정 정답:</b> 환기팬, 환기 팬, 팬, 창문, 환기</div>
+  </div>
+</section>
+
+<section class="problem" id="q18">
+  <span class="badge">문항 18 · 사물인터넷 IoT</span>
+  <h2>하천 수질 감시망</h2>
+  <div class="scene">
+    <div class="story"><b>문제 상황</b><br>하천 센서 A는 정상, B는 주의, C는 위험으로 표시되었습니다.</div>
+    <div class="visual"><svg viewBox="0 0 420 210"><rect x="35" y="70" width="90" height="70" rx="16" fill="#fef3c7" stroke="#f59e0b" stroke-width="5"></rect><text x="80" y="110" text-anchor="middle" font-size="17" font-weight="900">센서</text><path d="M130 105 L185 105" stroke="#dc2626" stroke-width="6"></path><rect x="190" y="70" width="90" height="70" rx="16" fill="#ede9fe" stroke="#7c3aed" stroke-width="5"></rect><text x="235" y="110" text-anchor="middle" font-size="17" font-weight="900">판단</text><path d="M285 105 L340 105" stroke="#dc2626" stroke-width="6"></path><circle cx="365" cy="105" r="35" fill="#dcfce7" stroke="#22c55e" stroke-width="5"></circle><text x="365" y="112" text-anchor="middle" font-size="17" font-weight="900">제어</text></svg></div>
+  </div>
+  <div class="qbox">
+    <b>단답형 문제</b><br>즉시 조사해야 할 위험 지점 기호를 쓰시오.
+    <input class="answer-input" id="a18" placeholder="정답 입력">
+    <div class="result" id="r18"></div>
+    <div class="solution" id="s18"><b>상세 풀이</b><br>위험으로 표시된 지점은 C이므로 가장 먼저 조사해야 합니다.<br><b>인정 정답:</b> C, c</div>
+  </div>
+</section>
+
+<section class="problem" id="q19">
+  <span class="badge">문항 19 · 인공지능 AI</span>
+  <h2>AI 현미경 세포 판단</h2>
+  <div class="scene">
+    <div class="story"><b>문제 상황</b><br>실제 이상 세포를 AI가 정상이라고 판단했습니다.</div>
+    <div class="visual"><div><span class="card hot">실제 이상</span><span class="card">AI 정상</span><p class="caption">AI 판단</p></div></div>
+  </div>
+  <div class="qbox">
+    <b>단답형 문제</b><br>이 오류를 무엇이라고 하는가?
+    <input class="answer-input" id="a19" placeholder="정답 입력">
+    <div class="result" id="r19"></div>
+    <div class="solution" id="s19"><b>상세 풀이</b><br>실제 이상을 정상으로 놓친 경우는 미탐 또는 거짓 음성입니다.<br><b>인정 정답:</b> 미탐, 거짓 음성, false negative, FN, fn</div>
+  </div>
+</section>
+
+<section class="problem" id="q20">
+  <span class="badge">문항 20 · 인공지능 AI</span>
+  <h2>AI 기후 위험 예측</h2>
+  <div class="scene">
+    <div class="story"><b>문제 상황</b><br>지역 A는 낮음, B는 가뭄 주의, C는 복합 위험으로 예측되었습니다.</div>
+    <div class="visual"><div><span class="card hot">실제 이상</span><span class="card">AI 정상</span><p class="caption">AI 판단</p></div></div>
+  </div>
+  <div class="qbox">
+    <b>단답형 문제</b><br>가장 위험한 지역 기호를 쓰시오.
+    <input class="answer-input" id="a20" placeholder="정답 입력">
+    <div class="result" id="r20"></div>
+    <div class="solution" id="s20"><b>상세 풀이</b><br>복합 위험으로 예측된 C 지역이 가장 위험합니다.<br><b>인정 정답:</b> C, c</div>
+  </div>
+</section>
+
+<div class="scoreboard">
+  <strong id="scoreText">점수: 미채점</strong>
+  <div>
+    <button onclick="gradeQuiz()">채점하기</button>
+    <button onclick="downloadResult()" style="background:#0f766e">TXT 산출</button>
+  </div>
+</div>
+</main>
+
+<script>
+const ANSWERS = {"1": ["0100"], "2": ["45", "45도"], "3": ["B", "b"], "4": ["P4", "p4"], "5": ["클래스", "class"], "6": ["객체", "object", "오브젝트"], "7": ["수분 보충", "수분보충", "물 보충", "물보충"], "8": ["3", "3회"], "9": ["D", "d"], "10": ["A", "a"], "11": ["함수", "function"], "12": ["모듈", "module"], "13": ["예외 처리", "예외처리", "exception handling"], "14": ["오류", "오류파일", "오류 파일", "error", "로그", "오류 로그"], "15": ["C", "c"], "16": ["E", "e"], "17": ["환기팬", "환기 팬", "팬", "창문", "환기"], "18": ["C", "c"], "19": ["미탐", "거짓 음성", "false negative", "FN", "fn"], "20": ["C", "c"]};
+const SOLUTIONS = {"1": "1010을 왼쪽으로 한 칸 밀면 맨 왼쪽 1은 사라지고 오른쪽에 0이 들어와 0100이 됩니다.", "2": "1000을 오른쪽으로 1칸 밀면 0100이 되고, 문제 조건에서 0100은 45도를 뜻합니다.", "3": "가장 큰 위험도 점수는 B의 95점이므로 B가 가장 먼저 진료 대상입니다.", "4": "P1~P3는 50 미만이고 P4가 53으로 처음 50 이상이 됩니다.", "5": "객체를 만들기 위한 공통 설계도를 클래스라고 합니다.", "6": "클래스에서 만들어진 개별 대상은 객체입니다.", "7": "체온이 38도 이상이고 땀이 많으므로 수분 보충 조건에 해당합니다.", "8": "0회 4.2, 1회 5.0, 2회 5.8이고 3회에 6.6으로 6.5 이상이 됩니다.", "9": "스택은 LIFO 구조이므로 마지막에 들어간 D가 가장 먼저 나옵니다.", "10": "큐는 FIFO 구조이므로 가장 먼저 들어온 A가 가장 먼저 처리됩니다.", "11": "입력값을 받아 정해진 처리를 한 뒤 결과를 내는 단위를 함수라고 합니다.", "12": "관련 있는 기능을 묶어 재사용하기 쉽게 만든 단위를 모듈이라고 합니다.", "13": "오류가 생겨도 전체 실행을 멈추지 않게 처리하는 것을 예외 처리라고 합니다.", "14": "센서 실패값은 정상 결과와 분리해 오류 파일 또는 오류 로그에 기록해야 합니다.", "15": "A와 B는 낮지만 C에서 9%로 크게 증가하므로 C부터 이상 구간을 의심할 수 있습니다.", "16": "E 해역은 산소 농도 5.8로 6.0 이하이므로 위험 구간입니다.", "17": "공기질 수치가 높으므로 환기팬을 켜거나 창문을 열어 환기해야 합니다.", "18": "위험으로 표시된 지점은 C이므로 가장 먼저 조사해야 합니다.", "19": "실제 이상을 정상으로 놓친 경우는 미탐 또는 거짓 음성입니다.", "20": "복합 위험으로 예측된 C 지역이 가장 위험합니다."};
+let lastScore = 0;
+let graded = false;
+const TOTAL = 20;
+
+function normalize(x){
+  return (x || "").trim().toLowerCase().replace(/\s+/g, "");
+}
+
+function isCorrect(n, value){
+  const v = normalize(value);
+  return ANSWERS[String(n)].some(ans => normalize(ans) === v);
+}
+
+function gradeQuiz(){
+  let correct = 0;
+  for(let i=1;i<=TOTAL;i++){
+    const input = document.getElementById("a"+i);
+    const result = document.getElementById("r"+i);
+    const sol = document.getElementById("s"+i);
+    const ok = isCorrect(i, input.value);
+    if(ok) correct++;
+    result.style.display = "block";
+    sol.style.display = "block";
+    result.className = "result " + (ok ? "correct" : "wrong");
+    result.innerHTML = ok ? "✅ 정답입니다. +5점" : "❌ 오답입니다. 상세 풀이를 확인하세요.";
+  }
+  lastScore = correct * 5;
+  graded = true;
+  document.getElementById("scoreText").textContent = "점수: " + lastScore + "점 / 100점 (" + correct + "/" + TOTAL + ")";
+}
+
+function pad(n){ return String(n).padStart(2,"0"); }
+function nowString(){
+  const d = new Date();
+  return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate())+"_"+pad(d.getHours())+"-"+pad(d.getMinutes())+"-"+pad(d.getSeconds());
+}
+
+function downloadResult(){
+  if(!graded) gradeQuiz();
+  const sid = document.getElementById("sid").value.trim() || "학번";
+  const name = document.getElementById("sname").value.trim() || "이름";
+  const time = nowString();
+  let text = "";
+  text += "과학고 창의력 경진대회 20문항 결과\n";
+  text += "학번: " + sid + "\n";
+  text += "이름: " + name + "\n";
+  text += "점수: " + lastScore + "점 / 100점\n";
+  text += "응시시각: " + time + "\n";
+  text += "====================================\n\n";
+  for(let i=1;i<=TOTAL;i++){
+    const user = document.getElementById("a"+i).value.trim();
+    const ok = isCorrect(i, user);
+    text += i + "번 " + (ok ? "정답" : "오답") + "\n";
+    text += "학생 답안: " + user + "\n";
+    text += "인정 정답: " + ANSWERS[String(i)].join(", ") + "\n";
+    text += "상세 풀이: " + SOLUTIONS[String(i)] + "\n\n";
+  }
+  const blob = new Blob([text], {type:"text/plain;charset=utf-8"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = sid + "_" + name + "_창의력_" + lastScore + "점_" + time + ".txt";
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+</script>
+
+</body></html>

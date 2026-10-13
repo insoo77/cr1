@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<!-- saved from url=(0162)file:///C:/Users/user/Downloads/OOP_%EA%B3%BC%ED%95%99%EA%B3%A0_%EC%B0%BD%EC%9D%98%EB%A0%A5_%EB%AC%B8%EC%A0%9C3%EA%B0%9C_%EA%B7%B8%EB%A6%BC%ED%8F%AC%ED%95%A8.html -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>OOP 객체지향 프로그램 활용 과학고 창의력 경진대회 문제 3개</title>
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:"Malgun Gothic","Apple SD Gothic Neo",Arial,sans-serif;
+  background:linear-gradient(135deg,#ecfdf5,#fff7ed,#eef2ff);
+  color:#0f172a;
+}
+header{
+  background:linear-gradient(135deg,#15803d,#1d4ed8,#7c2d12);
+  color:white;
+  padding:30px;
+  text-align:center;
+}
+header h1{margin:0;font-size:31px}
+header p{font-size:18px;line-height:1.7;margin:10px 0 0}
+main{max-width:1180px;margin:0 auto;padding:24px}
+.problem{
+  background:white;
+  border-radius:28px;
+  padding:26px;
+  margin:26px 0;
+  border:1px solid #dbeafe;
+  box-shadow:0 14px 35px rgba(15,23,42,.14);
+}
+.badge{
+  display:inline-block;
+  padding:7px 13px;
+  background:#dcfce7;
+  color:#166534;
+  border-radius:999px;
+  font-weight:900;
+  margin-bottom:12px;
+}
+h2{color:#1d4ed8;font-size:28px;margin:0 0 16px}
+h3{color:#7c2d12;font-size:22px}
+.scene{
+  display:grid;
+  grid-template-columns:1.04fr 1fr;
+  gap:24px;
+  align-items:start;
+}
+@media(max-width:900px){.scene{grid-template-columns:1fr}}
+.story{
+  background:#f8fafc;
+  border-radius:20px;
+  padding:18px;
+  border:1px solid #e2e8f0;
+  font-size:18px;
+  line-height:1.75;
+}
+.visual{
+  background:#fff7ed;
+  border-radius:22px;
+  padding:18px;
+  border:1px solid #fed7aa;
+}
+svg{
+  width:100%;
+  max-width:540px;
+  display:block;
+  margin:0 auto 14px;
+}
+.classbox{
+  border:3px solid #2563eb;
+  border-radius:18px;
+  background:#eff6ff;
+  margin:14px auto;
+  padding:12px;
+  max-width:480px;
+}
+.class-title{
+  background:#1d4ed8;
+  color:white;
+  padding:8px 12px;
+  border-radius:12px;
+  font-weight:900;
+  text-align:center;
+  margin-bottom:10px;
+}
+.property,.method{
+  padding:8px 10px;
+  margin:6px;
+  border-radius:12px;
+  font-weight:800;
+}
+.property{background:#fef3c7;color:#92400e;border:2px solid #f59e0b}
+.method{background:#dcfce7;color:#166534;border:2px solid #22c55e}
+.objects{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  justify-content:center;
+  margin-top:14px;
+}
+.obj{
+  min-width:110px;
+  padding:12px;
+  border-radius:18px;
+  background:#f8fafc;
+  border:3px solid #94a3b8;
+  text-align:center;
+  font-weight:900;
+}
+.obj.good{border-color:#22c55e;background:#dcfce7;color:#166534}
+.obj.warn{border-color:#f59e0b;background:#fef3c7;color:#92400e}
+.obj.hot{border-color:#ef4444;background:#fee2e2;color:#991b1b}
+.arrow{
+  text-align:center;
+  font-size:38px;
+  color:#dc2626;
+  font-weight:900;
+  margin:10px 0;
+}
+.question{
+  background:#eff6ff;
+  border-left:8px solid #2563eb;
+  padding:18px;
+  border-radius:16px;
+  margin-top:18px;
+  font-size:18px;
+  line-height:1.8;
+}
+.answer{
+  background:#ecfdf5;
+  border-left:8px solid #10b981;
+  padding:18px;
+  border-radius:16px;
+  margin-top:14px;
+  font-size:18px;
+  line-height:1.8;
+}
+.table{
+  width:100%;
+  border-collapse:collapse;
+  margin:16px 0;
+  font-size:17px;
+}
+.table th,.table td{
+  border:1px solid #cbd5e1;
+  padding:10px;
+  text-align:center;
+}
+.table th{background:#eff6ff;color:#1d4ed8}
+.footer{
+  background:#0f172a;
+  color:#e0f2fe;
+  border-radius:22px;
+  padding:22px;
+  line-height:1.8;
+  font-size:18px;
+}
+.keyword{font-weight:900;color:#dc2626}
+.oop{
+  background:#f1f5f9;
+  border-radius:16px;
+  padding:14px;
+  margin-top:12px;
+  font-size:17px;
+  line-height:1.7;
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>🧩 OOP 객체지향 프로그램 활용 과학고 창의력 경진대회 문제 3개</h1>
+  <p>코드 없이, 그림과 객체 모델을 이용해 실생활·농생명학·물리·화학·생명·지구과학 문제를 해결하는 융합 사고 문제</p>
+</header>
+
+<main>
+
+<section class="problem">
+  <span class="badge">문제 1 · 농생명학 + 환경과학 + OOP 모델링</span>
+  <h2>스마트 온실의 작물 객체 설계하기</h2>
+
+  <div class="scene">
+    <div class="story">
+      <h3>문제 상황</h3>
+      <p>
+        한 과학고 농생명 연구팀은 스마트 온실에서 토마토, 상추, 딸기를 기르고 있습니다.
+        각 작물은 서로 다른 적정 온도, 습도, 물 필요량을 가집니다.
+      </p>
+      <p>
+        연구팀은 작물을 하나하나 따로 관리하지 않고, <b class="keyword">작물 객체</b>로 생각해 관리하려고 합니다.
+        객체는 자신의 상태를 가지고, 필요한 행동을 수행할 수 있습니다.
+      </p>
+
+      <table class="table">
+        <tbody><tr><th>작물</th><th>현재 온도</th><th>토양 수분</th><th>상태</th></tr>
+        <tr><td>토마토</td><td>31℃</td><td>낮음</td><td>고온 스트레스</td></tr>
+        <tr><td>상추</td><td>22℃</td><td>적정</td><td>정상</td></tr>
+        <tr><td>딸기</td><td>18℃</td><td>낮음</td><td>물 부족</td></tr>
+      </tbody></table>
+
+      <div class="oop">
+        <b>OOP 관점</b><br>
+        작물 하나하나를 객체로 보고, 각 객체가 이름·온도·수분·상태를 속성으로 가지며
+        물주기, 환기하기, 경고하기 같은 행동을 수행한다고 생각합니다.
+      </div>
+    </div>
+
+    <div class="visual">
+      <svg viewBox="0 0 540 260">
+        <rect x="50" y="80" width="440" height="150" rx="22" fill="#dcfce7" stroke="#16a34a" stroke-width="6"></rect>
+        <path d="M70 80 L270 25 L470 80" fill="none" stroke="#16a34a" stroke-width="7"></path>
+        <rect x="100" y="125" width="70" height="80" rx="12" fill="#f97316"></rect>
+        <circle cx="135" cy="108" r="22" fill="#ef4444"></circle>
+        <rect x="230" y="125" width="70" height="80" rx="12" fill="#22c55e"></rect>
+        <ellipse cx="265" cy="105" rx="32" ry="18" fill="#84cc16"></ellipse>
+        <rect x="360" y="125" width="70" height="80" rx="12" fill="#f43f5e"></rect>
+        <circle cx="395" cy="104" r="18" fill="#e11d48"></circle>
+        <circle cx="410" cy="112" r="14" fill="#fb7185"></circle>
+        <text x="270" y="248" text-anchor="middle" font-size="23" font-weight="900" fill="#166534">스마트 온실 작물 객체</text>
+      </svg>
+
+      <div class="classbox">
+        <div class="class-title">클래스: 작물</div>
+        <div class="property">속성: 이름, 현재 온도, 토양 수분, 생육 상태</div>
+        <div class="method">행동: 물주기, 환기하기, 경고보내기</div>
+      </div>
+
+      <div class="arrow">⬇️ 같은 설계도로 여러 객체 생성</div>
+
+      <div class="objects">
+        <div class="obj hot">토마토<br>고온</div>
+        <div class="obj good">상추<br>정상</div>
+        <div class="obj warn">딸기<br>물 부족</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="question">
+    <b>질문</b><br>
+    ① 위 상황에서 “클래스”에 해당하는 것은 무엇인가?<br>
+    ② 토마토, 상추, 딸기는 OOP 관점에서 무엇에 해당하는가?<br>
+    ③ 토마토 객체가 스스로 판단해 실행해야 할 행동을 하나 제안하시오.<br>
+    ④ 농업 자동화에서 객체지향적 사고가 유용한 이유를 설명하시오.
+  </div>
+
+  <div class="answer">
+    <b>정답 및 해설</b><br>
+    ① <b>작물</b>이라는 공통 설계도가 클래스입니다.<br>
+    ② 토마토, 상추, 딸기는 각각 <b>작물 클래스에서 만들어진 객체</b>입니다.<br>
+    ③ 토마토는 현재 온도가 높으므로 <b>환기하기</b> 또는 <b>고온 경고 보내기</b> 행동을 수행할 수 있습니다.<br>
+    ④ 작물마다 상태가 다르므로 각 객체가 자기 상태를 바탕으로 독립적으로 관리되면 대규모 온실을 효율적으로 제어할 수 있습니다.
+  </div>
+</section>
+
+
+<section class="problem">
+  <span class="badge">문제 2 · 물리학 + 지구과학 + 실생활 안전</span>
+  <h2>지진 감지 센서 객체 네트워크</h2>
+
+  <div class="scene">
+    <div class="story">
+      <h3>문제 상황</h3>
+      <p>
+        한 지역에 지진 감지 센서 4개가 설치되어 있습니다.
+        각 센서는 흔들림 세기, 위치, 배터리 상태, 경보 상태를 가지고 있습니다.
+      </p>
+      <p>
+        지진이 발생하면 센서 객체들은 자신의 흔들림 값을 판단하고,
+        위험 기준을 넘으면 경보를 보냅니다.
+      </p>
+
+      <table class="table">
+        <tbody><tr><th>센서</th><th>위치</th><th>흔들림 세기</th><th>판단</th></tr>
+        <tr><td>S1</td><td>학교</td><td>2.1</td><td>안전</td></tr>
+        <tr><td>S2</td><td>하천</td><td>4.8</td><td>주의</td></tr>
+        <tr><td>S3</td><td>산지</td><td>6.2</td><td>위험</td></tr>
+        <tr><td>S4</td><td>주거지</td><td>5.9</td><td>위험</td></tr>
+      </tbody></table>
+
+      <div class="oop">
+        <b>OOP 관점</b><br>
+        센서 하나하나는 독립된 객체입니다.
+        각 객체는 자기 위치와 흔들림 값을 알고 있으며, 위험 여부를 스스로 판단할 수 있습니다.
+      </div>
+    </div>
+
+    <div class="visual">
+      <svg viewBox="0 0 540 270">
+        <rect x="50" y="190" width="440" height="35" rx="12" fill="#a7f3d0"></rect>
+        <path d="M70 190 L160 90 L250 190 Z" fill="#94a3b8"></path>
+        <path d="M220 190 L340 55 L470 190 Z" fill="#64748b"></path>
+        <circle cx="110" cy="170" r="18" fill="#22c55e"></circle>
+        <circle cx="210" cy="160" r="18" fill="#f59e0b"></circle>
+        <circle cx="330" cy="138" r="18" fill="#ef4444"></circle>
+        <circle cx="430" cy="172" r="18" fill="#ef4444"></circle>
+        <g stroke="#dc2626" stroke-width="5" fill="none">
+          <path d="M310 92 q20 -18 40 0"></path>
+          <path d="M300 70 q30 -30 60 0"></path>
+          <path d="M290 48 q40 -42 80 0"></path>
+        </g>
+        <text x="110" y="165" text-anchor="middle" font-size="13" font-weight="900" fill="white">S1</text>
+        <text x="210" y="155" text-anchor="middle" font-size="13" font-weight="900" fill="white">S2</text>
+        <text x="330" y="133" text-anchor="middle" font-size="13" font-weight="900" fill="white">S3</text>
+        <text x="430" y="167" text-anchor="middle" font-size="13" font-weight="900" fill="white">S4</text>
+        <text x="270" y="250" text-anchor="middle" font-size="23" font-weight="900" fill="#1e3a8a">지진 감지 센서 객체</text>
+      </svg>
+
+      <div class="classbox">
+        <div class="class-title">클래스: 지진센서</div>
+        <div class="property">속성: 위치, 흔들림 세기, 배터리, 경보 상태</div>
+        <div class="method">행동: 측정하기, 위험판단하기, 경보보내기</div>
+      </div>
+
+      <div class="objects">
+        <div class="obj good">S1<br>안전</div>
+        <div class="obj warn">S2<br>주의</div>
+        <div class="obj hot">S3<br>위험</div>
+        <div class="obj hot">S4<br>위험</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="question">
+    <b>질문</b><br>
+    ① 이 시스템에서 클래스와 객체를 각각 쓰시오.<br>
+    ② S3, S4 객체가 공통으로 실행해야 할 행동은 무엇인가?<br>
+    ③ 모든 센서를 하나의 큰 표로만 관리하는 방식보다 객체로 관리하는 방식이 더 좋은 이유를 설명하시오.<br>
+    ④ 지구과학 탐구에서 이런 객체 모델이 어떤 장점을 가지는가?
+  </div>
+
+  <div class="answer">
+    <b>정답 및 해설</b><br>
+    ① 클래스는 <b>지진센서</b>, 객체는 <b>S1, S2, S3, S4</b>입니다.<br>
+    ② S3, S4는 위험 기준을 넘었으므로 <b>경보보내기</b>를 실행해야 합니다.<br>
+    ③ 각 센서가 자신의 위치와 상태를 스스로 판단하므로, 센서 수가 늘어나도 독립적으로 관리하기 쉽습니다.<br>
+    ④ 지진, 화산, 기상, 해양 센서처럼 많은 관측 장비가 동시에 움직이는 지구과학 시스템을 구조적으로 표현할 수 있습니다.
+  </div>
+</section>
+
+
+<section class="problem">
+  <span class="badge">문제 3 · 화학 + 생명과학 + 의생명 응용</span>
+  <h2>약물 전달 나노입자 객체 설계</h2>
+
+  <div class="scene">
+    <div class="story">
+      <h3>문제 상황</h3>
+      <p>
+        한 의생명 과학 연구팀은 암세포 주변에서만 약물을 방출하는 나노입자를 설계하고 있습니다.
+        나노입자는 주변 pH, 온도, 표적 단백질 존재 여부를 감지합니다.
+      </p>
+      <p>
+        연구팀은 각각의 나노입자를 객체로 생각하여, 조건이 맞을 때만 약물을 방출하도록 모델링하려고 합니다.
+      </p>
+
+      <table class="table">
+        <tbody><tr><th>나노입자</th><th>pH</th><th>표적 단백질</th><th>판단</th></tr>
+        <tr><td>N1</td><td>7.4</td><td>없음</td><td>방출 안 함</td></tr>
+        <tr><td>N2</td><td>6.5</td><td>있음</td><td>방출</td></tr>
+        <tr><td>N3</td><td>6.8</td><td>없음</td><td>대기</td></tr>
+      </tbody></table>
+
+      <div class="oop">
+        <b>OOP 관점</b><br>
+        나노입자 객체는 자신의 환경 정보를 속성으로 가지고,
+        조건을 검사한 뒤 약물 방출 여부를 행동으로 결정합니다.
+      </div>
+    </div>
+
+    <div class="visual">
+      <svg viewBox="0 0 540 270">
+        <rect x="55" y="50" width="430" height="170" rx="35" fill="#fee2e2" stroke="#ef4444" stroke-width="5"></rect>
+        <circle cx="145" cy="135" r="42" fill="#fca5a5" stroke="#dc2626" stroke-width="5"></circle>
+        <circle cx="270" cy="135" r="42" fill="#fca5a5" stroke="#dc2626" stroke-width="5"></circle>
+        <circle cx="395" cy="135" r="42" fill="#fca5a5" stroke="#dc2626" stroke-width="5"></circle>
+        <circle cx="270" cy="135" r="16" fill="#7c3aed"></circle>
+        <g fill="#22c55e">
+          <circle cx="250" cy="110" r="8"></circle>
+          <circle cx="292" cy="112" r="8"></circle>
+          <circle cx="250" cy="160" r="8"></circle>
+          <circle cx="292" cy="158" r="8"></circle>
+        </g>
+        <path d="M270 92 L270 58" stroke="#7c3aed" stroke-width="6"></path>
+        <text x="270" y="248" text-anchor="middle" font-size="23" font-weight="900" fill="#1e3a8a">표적 약물 전달 나노입자</text>
+      </svg>
+
+      <div class="classbox">
+        <div class="class-title">클래스: 나노입자</div>
+        <div class="property">속성: pH, 온도, 표적 단백질, 약물 보유량</div>
+        <div class="method">행동: 환경감지, 조건판단, 약물방출</div>
+      </div>
+
+      <div class="objects">
+        <div class="obj good">N1<br>정상 pH</div>
+        <div class="obj hot">N2<br>방출</div>
+        <div class="obj warn">N3<br>대기</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="question">
+    <b>질문</b><br>
+    ① 나노입자 객체가 가져야 할 속성을 3가지 이상 쓰시오.<br>
+    ② N2 객체가 약물을 방출해야 하는 이유를 설명하시오.<br>
+    ③ 객체지향 모델에서 “조건판단” 행동은 왜 중요한가?<br>
+    ④ 실제 의생명 연구에서 이런 모델을 사용할 때 주의해야 할 점을 하나 쓰시오.
+  </div>
+
+  <div class="answer">
+    <b>정답 및 해설</b><br>
+    ① pH, 온도, 표적 단백질 존재 여부, 약물 보유량, 위치 등을 속성으로 가질 수 있습니다.<br>
+    ② N2는 pH가 낮고 표적 단백질이 있으므로 암세포 주변 조건과 맞아 약물 방출 조건을 만족합니다.<br>
+    ③ 객체가 자신의 상태를 바탕으로 스스로 행동을 선택해야 정밀하고 자동화된 시스템을 만들 수 있습니다.<br>
+    ④ 실제 생체 환경은 복잡하므로 오작동, 정상세포 손상, 면역 반응, 약물 농도 조절 문제를 반드시 고려해야 합니다.
+  </div>
+</section>
+
+<section class="footer">
+  <b>총정리</b><br>
+  객체지향 프로그램은 현실 세계의 대상을 “객체”로 생각하는 방법입니다.
+  작물, 센서, 나노입자처럼 각각의 대상은 속성과 행동을 가집니다.
+  과학고 창의력 문제에서는 코드를 쓰지 않아도, 현실의 과학 문제를 클래스·객체·속성·행동으로 구조화하는 사고력이 중요합니다.
+</section>
+
+</main>
+
+
+</body></html>

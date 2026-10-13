@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<!-- saved from url=(0186)file:///C:/Users/user/Downloads/%EC%A0%9C%EC%96%B4%EB%AC%B8_%EA%B3%BC%ED%95%99%EA%B3%A0_%EC%B0%BD%EC%9D%98%EB%A0%A5_%EB%AC%B8%EC%A0%9C3%EA%B0%9C_%EA%B7%B8%EB%A6%BC%ED%8F%AC%ED%95%A8.html -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>제어문 활용 과학고 창의력 경진대회 문제 3개</title>
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:"Malgun Gothic","Apple SD Gothic Neo",Arial,sans-serif;
+  background:linear-gradient(135deg,#eef2ff,#ecfeff,#fff7ed);
+  color:#0f172a;
+}
+header{
+  background:linear-gradient(135deg,#1d4ed8,#0891b2,#7c2d12);
+  color:white;
+  padding:30px;
+  text-align:center;
+}
+header h1{margin:0;font-size:31px}
+header p{font-size:18px;line-height:1.7;margin:10px 0 0}
+main{max-width:1180px;margin:0 auto;padding:24px}
+.problem{
+  background:white;
+  border-radius:28px;
+  padding:26px;
+  margin:26px 0;
+  border:1px solid #dbeafe;
+  box-shadow:0 14px 35px rgba(15,23,42,.14);
+}
+.badge{
+  display:inline-block;
+  padding:7px 13px;
+  background:#e0f2fe;
+  color:#075985;
+  border-radius:999px;
+  font-weight:900;
+  margin-bottom:12px;
+}
+h2{color:#1d4ed8;font-size:28px;margin:0 0 16px}
+h3{color:#7c2d12;font-size:22px}
+.scene{
+  display:grid;
+  grid-template-columns:1.04fr 1fr;
+  gap:24px;
+  align-items:start;
+}
+@media(max-width:900px){.scene{grid-template-columns:1fr}}
+.story{
+  background:#f8fafc;
+  border-radius:20px;
+  padding:18px;
+  border:1px solid #e2e8f0;
+  font-size:18px;
+  line-height:1.75;
+}
+.visual{
+  background:#fff7ed;
+  border-radius:22px;
+  padding:18px;
+  border:1px solid #fed7aa;
+}
+svg{width:100%;max-width:540px;display:block;margin:0 auto 14px}
+.flow{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px;
+  margin-top:14px;
+}
+.box,.diamond,.end{
+  padding:12px 16px;
+  border-radius:16px;
+  font-weight:900;
+  text-align:center;
+  min-width:250px;
+}
+.box{background:#dbeafe;border:3px solid #2563eb;color:#1e3a8a}
+.diamond{
+  background:#fef3c7;
+  border:3px solid #f59e0b;
+  color:#92400e;
+  transform:skew(-8deg);
+}
+.diamond span{display:block;transform:skew(8deg)}
+.end{background:#dcfce7;border:3px solid #22c55e;color:#166534}
+.arrow{font-size:30px;color:#dc2626;font-weight:900}
+.branch{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  width:100%;
+}
+.branch .box{min-width:auto;font-size:15px}
+.table{
+  width:100%;
+  border-collapse:collapse;
+  margin:16px 0;
+  font-size:17px;
+}
+.table th,.table td{
+  border:1px solid #cbd5e1;
+  padding:10px;
+  text-align:center;
+}
+.table th{background:#eff6ff;color:#1d4ed8}
+.question{
+  background:#eff6ff;
+  border-left:8px solid #2563eb;
+  padding:18px;
+  border-radius:16px;
+  margin-top:18px;
+  font-size:18px;
+  line-height:1.8;
+}
+.answer{
+  background:#ecfdf5;
+  border-left:8px solid #10b981;
+  padding:18px;
+  border-radius:16px;
+  margin-top:14px;
+  font-size:18px;
+  line-height:1.8;
+}
+.keyword{font-weight:900;color:#dc2626}
+.footer{
+  background:#0f172a;
+  color:#e0f2fe;
+  border-radius:22px;
+  padding:22px;
+  line-height:1.8;
+  font-size:18px;
+}
+.tag{
+  display:inline-block;
+  padding:4px 8px;
+  border-radius:999px;
+  background:#ede9fe;
+  color:#5b21b6;
+  font-size:14px;
+  font-weight:900;
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>🔀 제어문 활용 과학고 창의력 경진대회 문제 3개</h1>
+  <p>코드 없이, 그림과 순서도를 이용해 조건문·반복문·분기 판단을 실생활·스포츠 과학·물리·화학·생명·지구과학에 적용하는 문제</p>
+</header>
+
+<main>
+
+<section class="problem">
+  <span class="badge">문제 1 · 스포츠 과학 + 생명과학 + 조건문</span>
+  <h2>마라톤 선수의 탈수 위험 판단 시스템</h2>
+
+  <div class="scene">
+    <div class="story">
+      <h3>문제 상황</h3>
+      <p>
+        과학고 스포츠 과학 동아리는 마라톤 선수의 탈수 위험을 판단하는 시스템을 설계하려고 합니다.
+        센서는 <b>체온</b>, <b>심박수</b>, <b>땀 배출량</b>을 측정합니다.
+      </p>
+      <p>
+        시스템은 다음과 같이 판단합니다.
+      </p>
+      <table class="table">
+        <tbody><tr><th>조건</th><th>판단</th></tr>
+        <tr><td>체온 ≥ 39℃ 또는 심박수 ≥ 180</td><td>즉시 중단</td></tr>
+        <tr><td>체온 ≥ 38℃ 그리고 땀 배출량 많음</td><td>수분 보충</td></tr>
+        <tr><td>그 외</td><td>계속 경기</td></tr>
+      </tbody></table>
+      <p>
+        한 선수의 현재 상태는 <b>체온 38.5℃, 심박수 165, 땀 배출량 많음</b>입니다.
+      </p>
+      <p><span class="tag">핵심 제어문</span> 조건문 if / else 판단 구조</p>
+    </div>
+
+    <div class="visual">
+      <svg viewBox="0 0 540 260">
+        <rect x="65" y="155" width="410" height="45" rx="14" fill="#dbeafe"></rect>
+        <circle cx="170" cy="105" r="42" fill="#fca5a5" stroke="#ef4444" stroke-width="5"></circle>
+        <rect x="154" y="142" width="32" height="55" rx="12" fill="#1d4ed8"></rect>
+        <path d="M155 96 C170 75,185 96,170 125 Z" fill="#ef4444"></path>
+        <path d="M275 155 C295 118,330 118,350 155" fill="none" stroke="#dc2626" stroke-width="8"></path>
+        <circle cx="312" cy="145" r="22" fill="#fee2e2" stroke="#ef4444" stroke-width="5"></circle>
+        <path d="M395 86 C420 120,420 153,395 172 C370 153,370 120,395 86 Z" fill="#38bdf8" stroke="#0284c7" stroke-width="5"></path>
+        <text x="270" y="235" text-anchor="middle" font-size="23" font-weight="900" fill="#1e3a8a">운동 중 생체 신호 판단</text>
+      </svg>
+
+      <div class="flow">
+        <div class="box">선수 생체 신호 입력</div>
+        <div class="arrow">⬇</div>
+        <div class="diamond"><span>체온 ≥ 39℃ 또는 심박수 ≥ 180?</span></div>
+        <div class="branch">
+          <div class="box">예 → 즉시 중단</div>
+          <div class="box">아니오 → 다음 조건 확인</div>
+        </div>
+        <div class="arrow">⬇</div>
+        <div class="diamond"><span>체온 ≥ 38℃ 그리고 땀 많음?</span></div>
+        <div class="branch">
+          <div class="box">예 → 수분 보충</div>
+          <div class="box">아니오 → 계속 경기</div>
+        </div>
+        <div class="arrow">⬇</div>
+        <div class="end">최종 판단</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="question">
+    <b>질문</b><br>
+    ① 주어진 선수 상태에서 시스템의 최종 판단은 무엇인가?<br>
+    ② 이 문제에서 첫 번째 조건을 먼저 검사해야 하는 이유를 설명하시오.<br>
+    ③ 실제 스포츠 과학에서 조건문 판단만으로 결정하면 위험할 수 있는 이유를 쓰시오.
+  </div>
+
+  <div class="answer">
+    <b>정답 및 해설</b><br>
+    ① <b>수분 보충</b>입니다. 체온은 39℃ 미만이고 심박수도 180 미만이므로 즉시 중단은 아니지만, 체온이 38℃ 이상이고 땀이 많기 때문입니다.<br>
+    ② 생명과 안전에 가장 위험한 조건을 먼저 확인해야 합니다.<br>
+    ③ 선수의 질병, 기상 조건, 경기 강도, 개인 체질 등 다양한 요소가 있으므로 현장 전문가 판단이 함께 필요합니다.
+  </div>
+</section>
+
+
+<section class="problem">
+  <span class="badge">문제 2 · 화학 + 지구과학 + 반복문</span>
+  <h2>산성비 중화 실험에서 반복 판단하기</h2>
+
+  <div class="scene">
+    <div class="story">
+      <h3>문제 상황</h3>
+      <p>
+        지구과학 연구반은 산성비가 토양에 미치는 영향을 실험하고 있습니다.
+        산성비 모의 용액의 pH는 처음에 <b>4.2</b>입니다.
+      </p>
+      <p>
+        연구팀은 중화제를 조금씩 넣으며 pH를 측정합니다.
+        pH가 <b>6.5 이상</b>이 되면 중화를 멈춥니다.
+      </p>
+
+      <table class="table">
+        <tbody><tr><th>중화제 투입 횟수</th><th>0회</th><th>1회</th><th>2회</th><th>3회</th><th>4회</th></tr>
+        <tr><td>pH</td><td>4.2</td><td>5.0</td><td>5.8</td><td>6.6</td><td>7.1</td></tr>
+      </tbody></table>
+
+      <p>
+        이 실험은 <b class="keyword">조건이 만족될 때까지 반복</b>하는 구조입니다.
+      </p>
+      <p><span class="tag">핵심 제어문</span> while형 반복 사고</p>
+    </div>
+
+    <div class="visual">
+      <svg viewBox="0 0 540 260">
+        <rect x="95" y="90" width="100" height="135" rx="18" fill="#dbeafe" stroke="#2563eb" stroke-width="5"></rect>
+        <rect x="105" y="155" width="80" height="60" rx="12" fill="#fca5a5"></rect>
+        <text x="145" y="195" text-anchor="middle" font-size="22" font-weight="900" fill="#991b1b">pH 4.2</text>
+        <path d="M315 40 L355 40 L338 120 L332 120 Z" fill="#dcfce7" stroke="#16a34a" stroke-width="5"></path>
+        <circle cx="336" cy="142" r="12" fill="#22c55e"></circle>
+        <circle cx="326" cy="173" r="10" fill="#22c55e"></circle>
+        <circle cx="344" cy="203" r="8" fill="#22c55e"></circle>
+        <path d="M220 165 C250 130,285 130,315 165" fill="none" stroke="#f59e0b" stroke-width="7" marker-end="url(#arrow)"></path>
+        <defs>
+          <marker id="arrow" markerWidth="10" markerHeight="10" refX="5" refY="3" orient="auto">
+            <path d="M0,0 L0,6 L6,3 z" fill="#f59e0b"></path>
+          </marker>
+        </defs>
+        <text x="270" y="245" text-anchor="middle" font-size="23" font-weight="900" fill="#1e3a8a">산성비 중화 반복 실험</text>
+      </svg>
+
+      <div class="flow">
+        <div class="box">pH 측정</div>
+        <div class="arrow">⬇</div>
+        <div class="diamond"><span>pH ≥ 6.5 인가?</span></div>
+        <div class="branch">
+          <div class="box">예 → 실험 멈춤</div>
+          <div class="box">아니오 → 중화제 추가</div>
+        </div>
+        <div class="arrow">↺ 다시 pH 측정</div>
+        <div class="end">반복 종료 시점 찾기</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="question">
+    <b>질문</b><br>
+    ① 중화제는 최소 몇 회 넣어야 멈추는가?<br>
+    ② 이 문제에서 반복문이 필요한 이유를 설명하시오.<br>
+    ③ pH가 6.5를 넘었다고 해서 무조건 좋은 결과라고 볼 수 없는 이유를 화학 또는 환경 관점에서 쓰시오.
+  </div>
+
+  <div class="answer">
+    <b>정답 및 해설</b><br>
+    ① <b>3회</b>입니다. 2회에는 pH 5.8이므로 부족하고, 3회에는 pH 6.6으로 기준 6.5 이상이 됩니다.<br>
+    ② 중화제를 한 번 넣고 끝나는 것이 아니라, 조건을 만족할 때까지 계속 측정하고 추가해야 하기 때문입니다.<br>
+    ③ 너무 많이 넣으면 토양이나 물이 지나치게 알칼리성으로 변해 생태계에 또 다른 영향을 줄 수 있습니다.
+  </div>
+</section>
+
+
+<section class="problem">
+  <span class="badge">문제 3 · 물리학 + 생명과학 + 복합 제어문</span>
+  <h2>드론 생태 조사 경로 결정하기</h2>
+
+  <div class="scene">
+    <div class="story">
+      <h3>문제 상황</h3>
+      <p>
+        생태 연구팀은 드론을 이용해 습지의 철새 개체 수와 수온을 조사합니다.
+        드론은 배터리, 바람 세기, 관측 밀도를 보고 다음 행동을 결정합니다.
+      </p>
+
+      <table class="table">
+        <tbody><tr><th>조건</th><th>행동</th></tr>
+        <tr><td>배터리 ≤ 20%</td><td>기지로 귀환</td></tr>
+        <tr><td>바람 세기 ≥ 12 m/s</td><td>저고도 안전 비행</td></tr>
+        <tr><td>철새 밀도 높음</td><td>해당 구역 반복 촬영</td></tr>
+        <tr><td>그 외</td><td>다음 구역 이동</td></tr>
+      </tbody></table>
+
+      <p>
+        현재 드론 상태는 <b>배터리 45%, 바람 8 m/s, 철새 밀도 높음</b>입니다.
+      </p>
+      <p><span class="tag">핵심 제어문</span> 조건문 + 반복문 + 우선순위 판단</p>
+    </div>
+
+    <div class="visual">
+      <svg viewBox="0 0 540 270">
+        <path d="M40 190 C120 145,180 225,260 178 S400 130,500 185 L500 245 L40 245 Z" fill="#67e8f9" opacity=".7"></path>
+        <ellipse cx="180" cy="150" rx="40" ry="18" fill="#22c55e"></ellipse>
+        <ellipse cx="250" cy="130" rx="44" ry="18" fill="#16a34a"></ellipse>
+        <ellipse cx="330" cy="155" rx="40" ry="18" fill="#22c55e"></ellipse>
+        <circle cx="270" cy="72" r="22" fill="#334155"></circle>
+        <rect x="225" y="65" width="90" height="14" rx="7" fill="#475569"></rect>
+        <rect x="263" y="38" width="14" height="70" rx="7" fill="#475569"></rect>
+        <circle cx="220" cy="72" r="24" fill="none" stroke="#94a3b8" stroke-width="6"></circle>
+        <circle cx="320" cy="72" r="24" fill="none" stroke="#94a3b8" stroke-width="6"></circle>
+        <circle cx="270" cy="22" r="24" fill="none" stroke="#94a3b8" stroke-width="6"></circle>
+        <circle cx="270" cy="122" r="24" fill="none" stroke="#94a3b8" stroke-width="6"></circle>
+        <g fill="#1d4ed8">
+          <path d="M130 105 q18 -25 36 0 q-18 -10 -36 0"></path>
+          <path d="M370 110 q18 -25 36 0 q-18 -10 -36 0"></path>
+          <path d="M405 145 q18 -25 36 0 q-18 -10 -36 0"></path>
+        </g>
+        <text x="270" y="252" text-anchor="middle" font-size="23" font-weight="900" fill="#1e3a8a">습지 생태 조사 드론</text>
+      </svg>
+
+      <div class="flow">
+        <div class="box">드론 상태 확인</div>
+        <div class="arrow">⬇</div>
+        <div class="diamond"><span>배터리 ≤ 20%?</span></div>
+        <div class="branch">
+          <div class="box">예 → 기지 귀환</div>
+          <div class="box">아니오 → 바람 확인</div>
+        </div>
+        <div class="arrow">⬇</div>
+        <div class="diamond"><span>바람 ≥ 12 m/s?</span></div>
+        <div class="branch">
+          <div class="box">예 → 저고도 안전 비행</div>
+          <div class="box">아니오 → 생물 밀도 확인</div>
+        </div>
+        <div class="arrow">⬇</div>
+        <div class="diamond"><span>철새 밀도 높음?</span></div>
+        <div class="branch">
+          <div class="box">예 → 반복 촬영</div>
+          <div class="box">아니오 → 다음 구역 이동</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="question">
+    <b>질문</b><br>
+    ① 현재 드론이 선택해야 할 행동은 무엇인가?<br>
+    ② 이 순서도에서 배터리 조건을 가장 먼저 검사하는 이유는 무엇인가?<br>
+    ③ 철새 밀도가 높은 구역을 반복 촬영할 때, 생명과학 연구에서 얻을 수 있는 정보는 무엇인가?<br>
+    ④ 이 문제에서 조건문과 반복문이 함께 사용되는 부분을 설명하시오.
+  </div>
+
+  <div class="answer">
+    <b>정답 및 해설</b><br>
+    ① <b>해당 구역 반복 촬영</b>입니다. 배터리는 충분하고 바람도 약하지만 철새 밀도가 높기 때문입니다.<br>
+    ② 배터리가 부족하면 다른 조건을 판단하기 전에 추락 위험을 막기 위해 즉시 귀환해야 합니다.<br>
+    ③ 철새 개체 수, 이동 방향, 서식 밀도, 먹이 활동, 번식 가능성 등을 관찰할 수 있습니다.<br>
+    ④ 조건문은 배터리·바람·철새 밀도를 판단하고, 반복문은 철새 밀도가 높은 구역을 여러 번 촬영하는 과정에 해당합니다.
+  </div>
+</section>
+
+<section class="footer">
+  <b>총정리</b><br>
+  제어문은 “상황에 따라 다르게 행동하는 규칙”입니다.
+  조건문은 안전 여부나 위험 단계를 판단하고, 반복문은 목표 조건을 만족할 때까지 관찰·측정·실험을 계속하게 합니다.
+  과학고 창의력 문제에서는 코드를 쓰지 않아도, 실제 과학 상황을 순서도와 판단 구조로 표현하는 능력이 중요합니다.
+</section>
+
+</main>
+
+
+</body></html>

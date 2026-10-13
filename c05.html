@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<!-- saved from url=(0195)file:///C:/Users/user/Downloads/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0_%EA%B3%BC%ED%95%99%EA%B3%A0_%EC%B0%BD%EC%9D%98%EB%A0%A5_%EB%AC%B8%EC%A0%9C3%EA%B0%9C_%EA%B7%B8%EB%A6%BC%ED%8F%AC%ED%95%A8.html -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>자료구조 활용 과학고 창의력 경진대회 문제 3개</title>
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:"Malgun Gothic","Apple SD Gothic Neo",Arial,sans-serif;
+  background:linear-gradient(135deg,#eef2ff,#ecfeff,#fff7ed);
+  color:#0f172a;
+}
+header{
+  background:linear-gradient(135deg,#4338ca,#0f766e,#7c2d12);
+  color:white;
+  padding:30px;
+  text-align:center;
+}
+header h1{margin:0;font-size:31px}
+header p{font-size:18px;line-height:1.7;margin:10px 0 0}
+main{max-width:1180px;margin:0 auto;padding:24px}
+.problem{
+  background:white;
+  border-radius:28px;
+  padding:26px;
+  margin:26px 0;
+  border:1px solid #dbeafe;
+  box-shadow:0 14px 35px rgba(15,23,42,.14);
+}
+.badge{
+  display:inline-block;
+  padding:7px 13px;
+  background:#ede9fe;
+  color:#5b21b6;
+  border-radius:999px;
+  font-weight:900;
+  margin-bottom:12px;
+}
+h2{color:#1d4ed8;font-size:28px;margin:0 0 16px}
+h3{color:#7c2d12;font-size:22px}
+.scene{
+  display:grid;
+  grid-template-columns:1.04fr 1fr;
+  gap:24px;
+  align-items:start;
+}
+@media(max-width:900px){.scene{grid-template-columns:1fr}}
+.story{
+  background:#f8fafc;
+  border-radius:20px;
+  padding:18px;
+  border:1px solid #e2e8f0;
+  font-size:18px;
+  line-height:1.75;
+}
+.visual{
+  background:#fff7ed;
+  border-radius:22px;
+  padding:18px;
+  border:1px solid #fed7aa;
+}
+svg{width:100%;max-width:540px;display:block;margin:0 auto 14px}
+.table{
+  width:100%;
+  border-collapse:collapse;
+  margin:16px 0;
+  font-size:17px;
+}
+.table th,.table td{
+  border:1px solid #cbd5e1;
+  padding:10px;
+  text-align:center;
+}
+.table th{background:#eff6ff;color:#1d4ed8}
+.question{
+  background:#eff6ff;
+  border-left:8px solid #2563eb;
+  padding:18px;
+  border-radius:16px;
+  margin-top:18px;
+  font-size:18px;
+  line-height:1.8;
+}
+.answer{
+  background:#ecfdf5;
+  border-left:8px solid #10b981;
+  padding:18px;
+  border-radius:16px;
+  margin-top:14px;
+  font-size:18px;
+  line-height:1.8;
+}
+.keyword{font-weight:900;color:#dc2626}
+.footer{
+  background:#0f172a;
+  color:#e0f2fe;
+  border-radius:22px;
+  padding:22px;
+  line-height:1.8;
+  font-size:18px;
+}
+.struct-title{
+  text-align:center;
+  font-weight:900;
+  color:#7c2d12;
+  font-size:18px;
+  margin:10px 0;
+}
+.queue,.stack,.tree{
+  margin:16px auto;
+  max-width:500px;
+}
+.queue-line{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:8px;
+  flex-wrap:wrap;
+}
+.node{
+  min-width:74px;
+  min-height:62px;
+  border-radius:16px;
+  border:4px solid #60a5fa;
+  background:#dbeafe;
+  color:#1e3a8a;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  font-weight:900;
+  font-size:18px;
+}
+.node.hot{background:#fee2e2;border-color:#ef4444;color:#991b1b}
+.node.warn{background:#fef3c7;border-color:#f59e0b;color:#92400e}
+.node.good{background:#dcfce7;border-color:#22c55e;color:#166534}
+.node small{font-size:12px;color:#475569}
+.arrow{
+  font-size:30px;
+  color:#dc2626;
+  font-weight:900;
+}
+.stack-box{
+  width:150px;
+  margin:0 auto;
+  border-left:5px solid #64748b;
+  border-right:5px solid #64748b;
+  border-bottom:5px solid #64748b;
+  padding:8px;
+  display:flex;
+  flex-direction:column-reverse;
+  gap:8px;
+}
+.stack-item{
+  padding:12px;
+  border-radius:14px;
+  text-align:center;
+  font-weight:900;
+  border:3px solid #22c55e;
+  background:#dcfce7;
+  color:#166534;
+}
+.tree-row{
+  display:flex;
+  justify-content:center;
+  gap:18px;
+  margin:14px 0;
+}
+.tree-node{
+  padding:12px 16px;
+  border-radius:999px;
+  background:#dbeafe;
+  border:4px solid #2563eb;
+  color:#1e3a8a;
+  font-weight:900;
+  text-align:center;
+}
+.tree-node.hot{background:#fee2e2;border-color:#ef4444;color:#991b1b}
+.tree-node.good{background:#dcfce7;border-color:#22c55e;color:#166534}
+.tree-lines{
+  text-align:center;
+  color:#64748b;
+  font-size:28px;
+  line-height:20px;
+  font-weight:900;
+}
+.tag{
+  display:inline-block;
+  padding:4px 8px;
+  border-radius:999px;
+  background:#e0f2fe;
+  color:#075985;
+  font-size:14px;
+  font-weight:900;
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>🧱 자료구조 활용 과학고 창의력 경진대회 문제 3개</h1>
+  <p>코드 없이, 그림과 자료 저장 구조를 이용해 실생활·스포츠 과학·물리·화학·생명·지구과학 문제를 해결하는 융합 사고 문제</p>
+</header>
+
+<main>
+
+<section class="problem">
+  <span class="badge">문제 1 · 실생활 + 스포츠 과학 + 큐 Queue</span>
+  <h2>경기 중 부상 선수 응급처치 순서 관리</h2>
+
+  <div class="scene">
+    <div class="story">
+      <h3>문제 상황</h3>
+      <p>
+        학교 스포츠 과학 대회에서 여러 선수가 동시에 부상을 입었습니다.
+        의료 지원팀은 선수가 도착한 순서대로 처치하는 <b class="keyword">큐(Queue)</b> 구조를 기본으로 사용합니다.
+      </p>
+      <p>
+        큐는 먼저 들어온 사람이 먼저 나가는 구조입니다.
+        다만 생명 위험이 의심되는 경우에는 별도 응급 판단이 필요합니다.
+      </p>
+
+      <table class="table">
+        <tbody><tr><th>도착 순서</th><th>선수</th><th>상태</th></tr>
+        <tr><td>1</td><td>A</td><td>발목 통증</td></tr>
+        <tr><td>2</td><td>B</td><td>어지러움</td></tr>
+        <tr><td>3</td><td>C</td><td>가벼운 찰과상</td></tr>
+        <tr><td>4</td><td>D</td><td>호흡 곤란</td></tr>
+      </tbody></table>
+
+      <p><span class="tag">핵심 자료구조</span> Queue · FIFO · 대기열</p>
+    </div>
+
+    <div class="visual">
+      <svg viewBox="0 0 540 250">
+        <rect x="70" y="155" width="400" height="55" rx="16" fill="#dbeafe"></rect>
+        <circle cx="130" cy="115" r="28" fill="#fef3c7" stroke="#f59e0b" stroke-width="5"></circle>
+        <circle cx="220" cy="115" r="28" fill="#fee2e2" stroke="#ef4444" stroke-width="5"></circle>
+        <circle cx="310" cy="115" r="28" fill="#dcfce7" stroke="#22c55e" stroke-width="5"></circle>
+        <circle cx="400" cy="115" r="28" fill="#fee2e2" stroke="#dc2626" stroke-width="5"></circle>
+        <path d="M120 85 L140 85 L140 65 L160 65 L160 85 L180 85 L180 105 L160 105 L160 125 L140 125 L140 105 L120 105 Z" fill="#ef4444"></path>
+        <text x="270" y="232" text-anchor="middle" font-size="23" font-weight="900" fill="#1e3a8a">부상 선수 응급 대기열</text>
+      </svg>
+
+      <div class="struct-title">큐 구조: 먼저 들어온 사람이 먼저 나감</div>
+      <div class="queue-line">
+        <span class="arrow">입장 →</span>
+        <div class="node warn">A<small>발목</small></div>
+        <div class="node">B<small>어지러움</small></div>
+        <div class="node good">C<small>찰과상</small></div>
+        <div class="node hot">D<small>호흡</small></div>
+        <span class="arrow">→ 처치</span>
+      </div>
+
+      <div class="struct-title">FIFO 원칙만 적용하면?</div>
+      <div class="queue-line">
+        <div class="node warn">A</div>
+        <span class="arrow">→</span>
+        <div class="node">B</div>
+        <span class="arrow">→</span>
+        <div class="node good">C</div>
+        <span class="arrow">→</span>
+        <div class="node hot">D</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="question">
+    <b>질문</b><br>
+    ① 큐 구조만 그대로 적용하면 처치 순서는 어떻게 되는가?<br>
+    ② D 선수는 가장 늦게 도착했지만 호흡 곤란이 있다. 단순한 큐 구조만 사용하면 어떤 문제가 생기는가?<br>
+    ③ 스포츠 과학 현장에서 큐를 보완하려면 어떤 기준을 추가해야 하는가?
+  </div>
+
+  <div class="answer">
+    <b>정답 및 해설</b><br>
+    ① <b>A → B → C → D</b> 순서입니다.<br>
+    ② D처럼 생명 위험이 큰 선수가 늦게 처치될 수 있습니다.<br>
+    ③ 단순 대기 순서뿐 아니라 호흡, 의식, 출혈, 체온, 심박수 같은 위험도 기준을 함께 고려해야 합니다.
+  </div>
+</section>
+
+
+<section class="problem">
+  <span class="badge">문제 2 · 화학 + 생명과학 + 스택 Stack</span>
+  <h2>실험실 시료 보관과 꺼내기 순서</h2>
+
+  <div class="scene">
+    <div class="story">
+      <h3>문제 상황</h3>
+      <p>
+        생명과학 실험실에서 세포 배양 시료를 냉동 보관함에 차례대로 쌓아 넣었습니다.
+        보관함 구조상 맨 위에 있는 시료부터 꺼낼 수 있습니다.
+      </p>
+      <p>
+        이런 구조를 <b class="keyword">스택(Stack)</b>이라고 합니다.
+        스택은 나중에 들어온 것이 먼저 나가는 구조입니다.
+      </p>
+
+      <table class="table">
+        <tbody><tr><th>넣은 순서</th><th>시료</th><th>내용</th></tr>
+        <tr><td>1</td><td>A</td><td>효모 배양액</td></tr>
+        <tr><td>2</td><td>B</td><td>식물 세포</td></tr>
+        <tr><td>3</td><td>C</td><td>단백질 용액</td></tr>
+        <tr><td>4</td><td>D</td><td>DNA 추출액</td></tr>
+      </tbody></table>
+
+      <p><span class="tag">핵심 자료구조</span> Stack · LIFO · 되돌리기 구조</p>
+    </div>
+
+    <div class="visual">
+      <svg viewBox="0 0 540 245">
+        <rect x="150" y="40" width="240" height="170" rx="18" fill="#e0f2fe" stroke="#0284c7" stroke-width="6"></rect>
+        <rect x="180" y="70" width="180" height="30" rx="8" fill="#bfdbfe"></rect>
+        <rect x="180" y="108" width="180" height="30" rx="8" fill="#a7f3d0"></rect>
+        <rect x="180" y="146" width="180" height="30" rx="8" fill="#fde68a"></rect>
+        <circle cx="410" cy="62" r="12" fill="#22c55e"></circle>
+        <circle cx="410" cy="102" r="12" fill="#f59e0b"></circle>
+        <circle cx="410" cy="142" r="12" fill="#ef4444"></circle>
+        <text x="270" y="232" text-anchor="middle" font-size="23" font-weight="900" fill="#1e3a8a">냉동 시료 보관함</text>
+      </svg>
+
+      <div class="struct-title">스택 구조: 나중에 넣은 것이 먼저 나감</div>
+      <div class="stack-box">
+        <div class="stack-item">A<br>효모</div>
+        <div class="stack-item">B<br>식물세포</div>
+        <div class="stack-item">C<br>단백질</div>
+        <div class="stack-item">D<br>DNA</div>
+      </div>
+      <div class="struct-title">위쪽 D부터 꺼낼 수 있음</div>
+    </div>
+  </div>
+
+  <div class="question">
+    <b>질문</b><br>
+    ① 시료를 하나씩 꺼낸다면 꺼내는 순서는 어떻게 되는가?<br>
+    ② A 시료를 먼저 꺼내고 싶다면 어떤 문제가 생기는가?<br>
+    ③ 화학·생명과학 실험에서 스택 구조가 적합하지 않은 경우를 설명하시오.
+  </div>
+
+  <div class="answer">
+    <b>정답 및 해설</b><br>
+    ① <b>D → C → B → A</b> 순서입니다.<br>
+    ② A는 맨 아래에 있으므로 위에 있는 D, C, B를 먼저 꺼내야 합니다.<br>
+    ③ 오래된 시료를 먼저 사용해야 하는 실험, 온도 변화에 민감한 시료 관리, 유효 기간이 중요한 시료 관리에는 단순 스택보다 날짜 기준 정렬이나 큐 구조가 더 적합할 수 있습니다.
+  </div>
+</section>
+
+
+<section class="problem">
+  <span class="badge">문제 3 · 물리학 + 지구과학 + 트리 Tree</span>
+  <h2>기상 위험 판단 의사결정 트리</h2>
+
+  <div class="scene">
+    <div class="story">
+      <h3>문제 상황</h3>
+      <p>
+        기상 관측소는 태풍 접근 여부를 판단하기 위해 풍속, 기압, 강수량 데이터를 사용합니다.
+        연구팀은 여러 조건을 단계적으로 판단하는 <b class="keyword">트리(Tree)</b> 구조를 만들었습니다.
+      </p>
+
+      <table class="table">
+        <tbody><tr><th>조건</th><th>판단</th></tr>
+        <tr><td>풍속 ≥ 25 m/s</td><td>강풍 위험</td></tr>
+        <tr><td>기압 ≤ 980 hPa</td><td>태풍 가능성 증가</td></tr>
+        <tr><td>강수량 ≥ 80 mm</td><td>침수 위험</td></tr>
+      </tbody></table>
+
+      <p>
+        현재 관측값은 <b>풍속 28 m/s, 기압 975 hPa, 강수량 60 mm</b>입니다.
+      </p>
+
+      <p><span class="tag">핵심 자료구조</span> Tree · 계층 판단 · 의사결정 구조</p>
+    </div>
+
+    <div class="visual">
+      <svg viewBox="0 0 540 250">
+        <circle cx="100" cy="75" r="38" fill="#dbeafe" stroke="#2563eb" stroke-width="6"></circle>
+        <path d="M138 75 C200 40,250 40,315 75" fill="none" stroke="#64748b" stroke-width="6"></path>
+        <circle cx="365" cy="75" r="45" fill="#fee2e2" stroke="#ef4444" stroke-width="6"></circle>
+        <path d="M350 50 C370 20,395 35,390 63" fill="none" stroke="#ef4444" stroke-width="7"></path>
+        <path d="M350 100 C385 110,410 135,390 165" fill="none" stroke="#ef4444" stroke-width="7"></path>
+        <path d="M90 130 C170 160,245 160,330 130" fill="none" stroke="#0ea5e9" stroke-width="7"></path>
+        <rect x="75" y="155" width="390" height="45" rx="15" fill="#bfdbfe"></rect>
+        <text x="270" y="230" text-anchor="middle" font-size="23" font-weight="900" fill="#1e3a8a">기상 위험 의사결정 트리</text>
+      </svg>
+
+      <div class="struct-title">의사결정 트리</div>
+
+      <div class="tree">
+        <div class="tree-row">
+          <div class="tree-node">풍속 ≥ 25?</div>
+        </div>
+        <div class="tree-lines">↙ &nbsp;&nbsp;&nbsp; ↘</div>
+        <div class="tree-row">
+          <div class="tree-node hot">예<br>강풍 위험</div>
+          <div class="tree-node good">아니오<br>일반 관측</div>
+        </div>
+        <div class="tree-lines">↓</div>
+        <div class="tree-row">
+          <div class="tree-node">기압 ≤ 980?</div>
+        </div>
+        <div class="tree-lines">↙ &nbsp;&nbsp;&nbsp; ↘</div>
+        <div class="tree-row">
+          <div class="tree-node hot">예<br>태풍 가능</div>
+          <div class="tree-node good">아니오<br>강풍만 주의</div>
+        </div>
+        <div class="tree-lines">↓</div>
+        <div class="tree-row">
+          <div class="tree-node">강수량 ≥ 80?</div>
+        </div>
+        <div class="tree-lines">↙ &nbsp;&nbsp;&nbsp; ↘</div>
+        <div class="tree-row">
+          <div class="tree-node hot">예<br>침수 위험</div>
+          <div class="tree-node good">아니오<br>강풍·태풍 주의</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="question">
+    <b>질문</b><br>
+    ① 현재 관측값은 트리에서 어떤 경로를 따라가는가?<br>
+    ② 최종 판단은 무엇인가?<br>
+    ③ 기상 예측에서 트리 구조가 유용한 이유를 설명하시오.<br>
+    ④ 트리 구조만으로 날씨를 완벽히 예측할 수 없는 이유를 쓰시오.
+  </div>
+
+  <div class="answer">
+    <b>정답 및 해설</b><br>
+    ① 풍속 28이므로 <b>예</b>, 기압 975이므로 <b>예</b>, 강수량 60이므로 <b>아니오</b> 경로를 따릅니다.<br>
+    ② 최종 판단은 <b>강풍·태풍 주의</b>입니다. 침수 위험 기준은 넘지 않았습니다.<br>
+    ③ 조건을 단계별로 나누어 복잡한 기상 데이터를 이해하기 쉽게 판단할 수 있습니다.<br>
+    ④ 실제 날씨는 해수면 온도, 지형, 대기 흐름, 습도 등 많은 변수가 얽혀 있어 단순 트리만으로는 완벽한 예측이 어렵습니다.
+  </div>
+</section>
+
+<section class="footer">
+  <b>총정리</b><br>
+  자료구조는 데이터를 어떻게 담고, 어떤 순서로 꺼내고, 어떤 관계로 연결할지 정하는 방법입니다.
+  큐는 대기열, 스택은 쌓기 구조, 트리는 단계적 판단 구조에 잘 어울립니다.
+  과학고 창의력 문제에서는 자료구조를 단순 암기가 아니라 실제 과학 데이터와 의사결정에 연결해 해석하는 능력이 중요합니다.
+</section>
+
+</main>
+
+
+</body></html>

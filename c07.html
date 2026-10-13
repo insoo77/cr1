@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<!-- saved from url=(0050)file:///C:/Users/user/Downloads/preview%20(3).html -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>파일 입출력 및 예외 처리 활용 과학고 창의력 경진대회 문제 3개</title>
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:"Malgun Gothic","Apple SD Gothic Neo",Arial,sans-serif;
+  background:linear-gradient(135deg,#eef2ff,#ecfeff,#fff7ed);
+  color:#0f172a;
+}
+header{
+  background:linear-gradient(135deg,#1d4ed8,#7c3aed,#7c2d12);
+  color:white;
+  padding:30px;
+  text-align:center;
+}
+header h1{margin:0;font-size:31px}
+header p{font-size:18px;line-height:1.7;margin:10px 0 0}
+main{max-width:1180px;margin:0 auto;padding:24px}
+.problem{
+  background:white;
+  border-radius:28px;
+  padding:26px;
+  margin:26px 0;
+  border:1px solid #dbeafe;
+  box-shadow:0 14px 35px rgba(15,23,42,.14);
+}
+.badge{
+  display:inline-block;
+  padding:7px 13px;
+  background:#ede9fe;
+  color:#5b21b6;
+  border-radius:999px;
+  font-weight:900;
+  margin-bottom:12px;
+}
+h2{color:#1d4ed8;font-size:28px;margin:0 0 16px}
+h3{color:#7c2d12;font-size:22px}
+.scene{
+  display:grid;
+  grid-template-columns:1.04fr 1fr;
+  gap:24px;
+  align-items:start;
+}
+@media(max-width:900px){.scene{grid-template-columns:1fr}}
+.story{
+  background:#f8fafc;
+  border-radius:20px;
+  padding:18px;
+  border:1px solid #e2e8f0;
+  font-size:18px;
+  line-height:1.75;
+}
+.visual{
+  background:#fff7ed;
+  border-radius:22px;
+  padding:18px;
+  border:1px solid #fed7aa;
+}
+svg{width:100%;max-width:540px;display:block;margin:0 auto 14px}
+.table{
+  width:100%;
+  border-collapse:collapse;
+  margin:16px 0;
+  font-size:17px;
+}
+.table th,.table td{
+  border:1px solid #cbd5e1;
+  padding:10px;
+  text-align:center;
+}
+.table th{background:#eff6ff;color:#1d4ed8}
+.question{
+  background:#eff6ff;
+  border-left:8px solid #2563eb;
+  padding:18px;
+  border-radius:16px;
+  margin-top:18px;
+  font-size:18px;
+  line-height:1.8;
+}
+.answer{
+  background:#ecfdf5;
+  border-left:8px solid #10b981;
+  padding:18px;
+  border-radius:16px;
+  margin-top:14px;
+  font-size:18px;
+  line-height:1.8;
+}
+.keyword{font-weight:900;color:#dc2626}
+.footer{
+  background:#0f172a;
+  color:#e0f2fe;
+  border-radius:22px;
+  padding:22px;
+  line-height:1.8;
+  font-size:18px;
+}
+.fileflow{
+  margin:16px auto;
+  max-width:520px;
+}
+.flowrow{
+  display:grid;
+  grid-template-columns:1fr auto 1fr auto 1fr;
+  gap:8px;
+  align-items:center;
+}
+.box{
+  padding:13px 10px;
+  border-radius:18px;
+  text-align:center;
+  font-weight:900;
+  border:3px solid #2563eb;
+  background:#dbeafe;
+  color:#1e3a8a;
+  min-height:70px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+}
+.box.file{background:#fef3c7;border-color:#f59e0b;color:#92400e}
+.box.safe{background:#dcfce7;border-color:#22c55e;color:#166534}
+.box.err{background:#fee2e2;border-color:#ef4444;color:#991b1b}
+.arrow{font-size:30px;color:#dc2626;font-weight:900;text-align:center}
+.errpanel{
+  border:3px dashed #ef4444;
+  border-radius:18px;
+  background:#fff1f2;
+  padding:14px;
+  color:#991b1b;
+  font-weight:900;
+  text-align:center;
+  margin-top:16px;
+}
+.record{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  justify-content:center;
+  margin-top:14px;
+}
+.card{
+  min-width:100px;
+  padding:12px;
+  border-radius:18px;
+  border:3px solid #94a3b8;
+  background:#f8fafc;
+  text-align:center;
+  font-weight:900;
+}
+.card.good{background:#dcfce7;border-color:#22c55e;color:#166534}
+.card.warn{background:#fef3c7;border-color:#f59e0b;color:#92400e}
+.card.bad{background:#fee2e2;border-color:#ef4444;color:#991b1b}
+.tag{
+  display:inline-block;
+  padding:4px 8px;
+  border-radius:999px;
+  background:#e0f2fe;
+  color:#075985;
+  font-size:14px;
+  font-weight:900;
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>📁 파일 입출력 및 예외 처리 활용 과학고 창의력 경진대회 문제 3개</h1>
+  <p>코드 없이, 그림과 데이터 흐름을 이용해 실생활·정수론·해석학·물리·화학·생명·지구과학 문제를 해결하는 융합 사고 문제</p>
+</header>
+
+<main>
+
+<section class="problem">
+  <span class="badge">문제 1 · 정수론 + 파일 입력 + 예외 처리</span>
+  <h2>소수 관측 데이터 파일에서 잘못된 값 찾아내기</h2>
+
+  <div class="scene">
+    <div class="story">
+      <h3>문제 상황</h3>
+      <p>
+        과학고 수학 탐구반은 여러 자연수를 파일에 저장해 두고, 그 수가 소수인지 합성수인지 분류하려고 합니다.
+        그런데 데이터 파일에는 실수, 음수, 빈칸, 문자처럼 분석할 수 없는 값이 섞여 있습니다.
+      </p>
+      <p>
+        연구팀은 파일에서 한 줄씩 값을 읽고, 올바른 자연수이면 소수 판별 대상으로 삼고,
+        잘못된 값이면 프로그램이 멈추지 않도록 <b class="keyword">예외 처리</b>를 해야 합니다.
+      </p>
+
+      <table class="table">
+        <tbody><tr><th>파일 줄</th><th>값</th><th>처리 판단</th></tr>
+        <tr><td>1</td><td>17</td><td>소수 판별</td></tr>
+        <tr><td>2</td><td>-5</td><td>예외: 자연수 아님</td></tr>
+        <tr><td>3</td><td>23</td><td>소수 판별</td></tr>
+        <tr><td>4</td><td>abc</td><td>예외: 숫자 아님</td></tr>
+        <tr><td>5</td><td>1</td><td>예외: 소수 아님</td></tr>
+      </tbody></table>
+
+      <p><span class="tag">핵심 개념</span> 파일 읽기 · 데이터 검증 · 예외 처리 · 오류 기록</p>
+    </div>
+
+    <div class="visual">
+      <svg viewBox="0 0 540 260">
+        <rect x="70" y="45" width="130" height="170" rx="18" fill="#fef3c7" stroke="#f59e0b" stroke-width="6"></rect>
+        <line x1="95" y1="85" x2="175" y2="85" stroke="#92400e" stroke-width="5"></line>
+        <line x1="95" y1="120" x2="175" y2="120" stroke="#92400e" stroke-width="5"></line>
+        <line x1="95" y1="155" x2="175" y2="155" stroke="#92400e" stroke-width="5"></line>
+        <text x="135" y="235" text-anchor="middle" font-size="20" font-weight="900" fill="#92400e">numbers.txt</text>
+        <circle cx="315" cy="130" r="62" fill="#dbeafe" stroke="#2563eb" stroke-width="7"></circle>
+        <text x="315" y="123" text-anchor="middle" font-size="20" font-weight="900" fill="#1e3a8a">검증</text>
+        <text x="315" y="150" text-anchor="middle" font-size="20" font-weight="900" fill="#1e3a8a">소수 판별</text>
+        <rect x="415" y="70" width="80" height="55" rx="14" fill="#dcfce7" stroke="#22c55e" stroke-width="5"></rect>
+        <rect x="415" y="150" width="80" height="55" rx="14" fill="#fee2e2" stroke="#ef4444" stroke-width="5"></rect>
+        <text x="455" y="104" text-anchor="middle" font-size="16" font-weight="900" fill="#166534">결과</text>
+        <text x="455" y="184" text-anchor="middle" font-size="16" font-weight="900" fill="#991b1b">오류</text>
+        <path d="M205 130 L248 130" stroke="#dc2626" stroke-width="7" marker-end="url(#arr)"></path>
+        <path d="M375 110 L410 95" stroke="#dc2626" stroke-width="7" marker-end="url(#arr)"></path>
+        <path d="M375 150 L410 174" stroke="#dc2626" stroke-width="7" marker-end="url(#arr)"></path>
+        <defs><marker id="arr" markerWidth="10" markerHeight="10" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L6,3 z" fill="#dc2626"></path></marker></defs>
+      </svg>
+
+      <div class="fileflow">
+        <div class="flowrow">
+          <div class="box file">파일 입력<br>numbers.txt</div>
+          <div class="arrow">→</div>
+          <div class="box">값 검증<br>자연수인가?</div>
+          <div class="arrow">→</div>
+          <div class="box safe">결과 저장<br>prime_result.txt</div>
+        </div>
+        <div class="errpanel">잘못된 값은 error_log.txt에 따로 기록</div>
+      </div>
+
+      <div class="record">
+        <div class="card good">17<br>소수</div>
+        <div class="card bad">-5<br>오류</div>
+        <div class="card good">23<br>소수</div>
+        <div class="card bad">abc<br>오류</div>
+        <div class="card warn">1<br>소수 아님</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="question">
+    <b>질문</b><br>
+    ① 파일에서 읽은 값 중 소수 판별을 정상적으로 할 수 있는 값은 무엇인가?<br>
+    ② -5, abc 같은 값이 있을 때 예외 처리가 필요한 이유를 설명하시오.<br>
+    ③ 오류가 발생한 줄을 따로 기록하는 것이 수학 탐구에서 중요한 이유를 쓰시오.<br>
+    ④ 이 시스템에서 결과 파일과 오류 파일을 분리하면 어떤 장점이 있는가?
+  </div>
+
+  <div class="answer">
+    <b>정답 및 해설</b><br>
+    ① <b>17, 23</b>은 정상적인 자연수이며 소수 판별 대상입니다. 1은 자연수이지만 소수가 아니므로 별도 처리해야 합니다.<br>
+    ② 잘못된 값 때문에 전체 분석이 멈추면 정상 데이터까지 분석할 수 없기 때문입니다.<br>
+    ③ 어떤 데이터가 잘못되었는지 추적할 수 있어 실험 기록의 신뢰성과 재현성을 높일 수 있습니다.<br>
+    ④ 정상 결과와 오류를 구분해 저장하면 나중에 결과 분석과 데이터 정제를 효율적으로 할 수 있습니다.
+  </div>
+</section>
+
+
+<section class="problem">
+  <span class="badge">문제 2 · 해석학 + 물리학 + 파일 출력</span>
+  <h2>낙하 실험 측정값 저장과 이상값 처리</h2>
+
+  <div class="scene">
+    <div class="story">
+      <h3>문제 상황</h3>
+      <p>
+        물리학 탐구반은 공의 낙하 실험을 하며 시간과 위치를 측정했습니다.
+        위치 데이터로부터 평균 속도를 추정하려고 하지만, 센서 오류로 말이 안 되는 값이 하나 포함되어 있습니다.
+      </p>
+      <p>
+        연구팀은 정상 측정값은 결과 파일에 저장하고, 이상값은 오류 파일에 기록하려고 합니다.
+        이는 해석학에서 함수의 변화율을 관찰할 때도 중요한 데이터 정제 과정입니다.
+      </p>
+
+      <table class="table">
+        <tbody><tr><th>시간 t(s)</th><th>0.0</th><th>0.1</th><th>0.2</th><th>0.3</th><th>0.4</th></tr>
+        <tr><td>위치 y(m)</td><td>0.00</td><td>0.05</td><td>0.20</td><td>-999</td><td>0.78</td></tr>
+      </tbody></table>
+
+      <p>
+        여기서 <b>-999</b>는 실제 위치가 아니라 센서가 실패했을 때 표시한 오류값입니다.
+      </p>
+      <p><span class="tag">핵심 개념</span> 파일 출력 · 이상값 예외 처리 · 변화율 분석</p>
+    </div>
+
+    <div class="visual">
+      <svg viewBox="0 0 540 270">
+        <rect x="65" y="45" width="90" height="180" rx="14" fill="#dbeafe" stroke="#2563eb" stroke-width="5"></rect>
+        <circle cx="110" cy="80" r="18" fill="#f97316"></circle>
+        <circle cx="110" cy="120" r="18" fill="#f97316"></circle>
+        <circle cx="110" cy="170" r="18" fill="#f97316"></circle>
+        <path d="M110 60 L110 210" stroke="#1e3a8a" stroke-width="3" stroke-dasharray="6 6"></path>
+        <rect x="235" y="70" width="110" height="70" rx="18" fill="#dcfce7" stroke="#22c55e" stroke-width="5"></rect>
+        <rect x="235" y="160" width="110" height="70" rx="18" fill="#fee2e2" stroke="#ef4444" stroke-width="5"></rect>
+        <text x="290" y="112" text-anchor="middle" font-size="18" font-weight="900" fill="#166534">정상값</text>
+        <text x="290" y="202" text-anchor="middle" font-size="18" font-weight="900" fill="#991b1b">이상값</text>
+        <path d="M160 135 L225 105" stroke="#dc2626" stroke-width="7" marker-end="url(#arr2)"></path>
+        <path d="M160 145 L225 195" stroke="#dc2626" stroke-width="7" marker-end="url(#arr2)"></path>
+        <defs><marker id="arr2" markerWidth="10" markerHeight="10" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L6,3 z" fill="#dc2626"></path></marker></defs>
+        <text x="270" y="252" text-anchor="middle" font-size="23" font-weight="900" fill="#1e3a8a">낙하 실험 데이터 분리 저장</text>
+      </svg>
+
+      <div class="fileflow">
+        <div class="flowrow">
+          <div class="box file">측정 파일<br>fall_data.txt</div>
+          <div class="arrow">→</div>
+          <div class="box">이상값 검사<br>-999?</div>
+          <div class="arrow">→</div>
+          <div class="box safe">정상값 저장</div>
+        </div>
+        <div class="errpanel">센서 실패값 -999는 오류 기록으로 분리</div>
+      </div>
+
+      <div class="record">
+        <div class="card good">0.00</div>
+        <div class="card good">0.05</div>
+        <div class="card good">0.20</div>
+        <div class="card bad">-999</div>
+        <div class="card good">0.78</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="question">
+    <b>질문</b><br>
+    ① 위 데이터에서 예외 처리해야 할 값은 무엇인가?<br>
+    ② 이 값을 그대로 사용해 평균 속도나 변화율을 계산하면 어떤 문제가 생기는가?<br>
+    ③ 정상 측정값만 따로 파일로 저장하는 이유를 설명하시오.<br>
+    ④ 해석학에서 극한이나 변화율을 다룰 때 데이터 오류를 구분하는 것이 중요한 이유를 쓰시오.
+  </div>
+
+  <div class="answer">
+    <b>정답 및 해설</b><br>
+    ① <b>-999</b>입니다. 실제 낙하 위치가 아니라 센서 오류 표시값입니다.<br>
+    ② 실제보다 매우 큰 변화가 있는 것처럼 보이며 평균 속도와 변화율 계산이 심하게 왜곡됩니다.<br>
+    ③ 정상 데이터만 저장하면 그래프 작성, 변화율 추정, 실험 보고서 작성에서 신뢰도가 높아집니다.<br>
+    ④ 해석학의 변화율과 극한은 작은 차이에도 민감하므로 오류값을 제거하지 않으면 잘못된 결론을 낼 수 있습니다.
+  </div>
+</section>
+
+
+<section class="problem">
+  <span class="badge">문제 3 · 생명과학 + 화학 + 지구과학 + 예외 처리</span>
+  <h2>미세먼지와 호흡기 건강 데이터 통합 파일 만들기</h2>
+
+  <div class="scene">
+    <div class="story">
+      <h3>문제 상황</h3>
+      <p>
+        환경보건 연구팀은 미세먼지 농도, 기온, 호흡기 증상 신고 수를 한 파일로 통합하려고 합니다.
+        그런데 서로 다른 기관에서 받은 파일은 형식이 다릅니다.
+      </p>
+      <p>
+        어떤 파일에는 날짜가 빠져 있고, 어떤 파일에는 농도 단위가 다르며,
+        어떤 줄에는 숫자 대신 “측정불가”라는 문자가 들어 있습니다.
+      </p>
+
+      <table class="table">
+        <tbody><tr><th>자료</th><th>예시 값</th><th>문제</th></tr>
+        <tr><td>미세먼지</td><td>78 μg/m³</td><td>정상</td></tr>
+        <tr><td>기온</td><td>측정불가</td><td>숫자 아님</td></tr>
+        <tr><td>호흡기 신고</td><td>32건</td><td>정상</td></tr>
+        <tr><td>날짜</td><td>빈칸</td><td>필수값 누락</td></tr>
+      </tbody></table>
+
+      <p>
+        연구팀은 잘못된 줄은 멈추지 않고 오류 목록에 기록한 뒤, 정상 자료만 통합 파일로 저장하려고 합니다.
+      </p>
+      <p><span class="tag">핵심 개념</span> 여러 파일 통합 · 누락값 · 형식 오류 · 예외 처리</p>
+    </div>
+
+    <div class="visual">
+      <svg viewBox="0 0 540 270">
+        <rect x="60" y="55" width="90" height="120" rx="14" fill="#dbeafe" stroke="#2563eb" stroke-width="5"></rect>
+        <rect x="175" y="55" width="90" height="120" rx="14" fill="#fef3c7" stroke="#f59e0b" stroke-width="5"></rect>
+        <rect x="290" y="55" width="90" height="120" rx="14" fill="#dcfce7" stroke="#22c55e" stroke-width="5"></rect>
+        <text x="105" y="120" text-anchor="middle" font-size="17" font-weight="900" fill="#1e3a8a">먼지</text>
+        <text x="220" y="120" text-anchor="middle" font-size="17" font-weight="900" fill="#92400e">기온</text>
+        <text x="335" y="120" text-anchor="middle" font-size="17" font-weight="900" fill="#166534">건강</text>
+        <rect x="425" y="95" width="70" height="90" rx="16" fill="#ede9fe" stroke="#7c3aed" stroke-width="5"></rect>
+        <text x="460" y="145" text-anchor="middle" font-size="16" font-weight="900" fill="#5b21b6">통합</text>
+        <path d="M150 115 L175 115" stroke="#dc2626" stroke-width="6" marker-end="url(#arr3)"></path>
+        <path d="M265 115 L290 115" stroke="#dc2626" stroke-width="6" marker-end="url(#arr3)"></path>
+        <path d="M380 130 L420 140" stroke="#dc2626" stroke-width="6" marker-end="url(#arr3)"></path>
+        <defs><marker id="arr3" markerWidth="10" markerHeight="10" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L6,3 z" fill="#dc2626"></path></marker></defs>
+        <circle cx="225" cy="205" r="24" fill="#ef4444"></circle>
+        <text x="225" y="214" text-anchor="middle" font-size="26" font-weight="900" fill="white">!</text>
+        <text x="270" y="248" text-anchor="middle" font-size="23" font-weight="900" fill="#1e3a8a">환경보건 파일 통합</text>
+      </svg>
+
+      <div class="fileflow">
+        <div class="flowrow">
+          <div class="box file">여러 파일<br>입력</div>
+          <div class="arrow">→</div>
+          <div class="box">형식 검사<br>날짜·숫자·단위</div>
+          <div class="arrow">→</div>
+          <div class="box safe">통합 파일<br>health_env.csv</div>
+        </div>
+        <div class="errpanel">빈 날짜, 측정불가, 단위 오류는 error_report.txt로 기록</div>
+      </div>
+
+      <div class="record">
+        <div class="card good">78<br>정상</div>
+        <div class="card bad">측정불가</div>
+        <div class="card good">32건</div>
+        <div class="card bad">날짜 없음</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="question">
+    <b>질문</b><br>
+    ① 위 자료에서 예외 처리해야 할 항목 2가지를 쓰시오.<br>
+    ② 날짜가 빈칸인 자료를 그대로 통합하면 어떤 문제가 생기는가?<br>
+    ③ 정상 자료만 통합 파일로 저장하고, 오류 자료를 따로 저장하는 이유를 설명하시오.<br>
+    ④ 환경·보건 연구에서 파일 입출력과 예외 처리가 중요한 이유를 쓰시오.
+  </div>
+
+  <div class="answer">
+    <b>정답 및 해설</b><br>
+    ① <b>기온의 “측정불가”</b>, <b>날짜 빈칸</b>은 예외 처리해야 합니다. 단위가 다른 값도 검사 대상입니다.<br>
+    ② 날짜가 없으면 어느 날의 미세먼지와 건강 신고인지 연결할 수 없어 시계열 분석이 불가능해집니다.<br>
+    ③ 정상 데이터 분석과 오류 데이터 수정 작업을 분리할 수 있어 연구의 신뢰성과 효율성이 높아집니다.<br>
+    ④ 실제 과학 데이터는 누락값과 형식 오류가 많기 때문에, 프로그램이 멈추지 않고 오류를 기록하며 분석을 계속하는 능력이 중요합니다.
+  </div>
+</section>
+
+<section class="footer">
+  <b>총정리</b><br>
+  파일 입출력은 데이터를 읽고 저장하는 과정이며, 예외 처리는 잘못된 값이나 누락값이 있어도 전체 분석이 멈추지 않게 하는 안전장치입니다.
+  정수론·해석학·물리·화학·생명·지구과학 연구에서는 데이터의 양이 많고 오류가 섞일 수 있으므로,
+  정상 결과 파일과 오류 기록 파일을 분리하는 사고가 매우 중요합니다.
+</section>
+
+</main>
+
+</body></html>

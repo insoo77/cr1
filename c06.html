@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<!-- saved from url=(0195)file:///C:/Users/user/Downloads/%ED%95%A8%EC%88%98%EB%AA%A8%EB%93%88_%EA%B3%BC%ED%95%99%EA%B3%A0_%EC%B0%BD%EC%9D%98%EB%A0%A5_%EB%AC%B8%EC%A0%9C3%EA%B0%9C_%EA%B7%B8%EB%A6%BC%ED%8F%AC%ED%95%A8.html -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>함수와 모듈 활용 과학고 창의력 경진대회 문제 3개</title>
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:"Malgun Gothic","Apple SD Gothic Neo",Arial,sans-serif;
+  background:linear-gradient(135deg,#eef2ff,#ecfeff,#fff7ed);
+  color:#0f172a;
+}
+header{
+  background:linear-gradient(135deg,#2563eb,#0f766e,#7c2d12);
+  color:white;
+  padding:30px;
+  text-align:center;
+}
+header h1{margin:0;font-size:31px}
+header p{font-size:18px;line-height:1.7;margin:10px 0 0}
+main{max-width:1180px;margin:0 auto;padding:24px}
+.problem{
+  background:white;
+  border-radius:28px;
+  padding:26px;
+  margin:26px 0;
+  border:1px solid #dbeafe;
+  box-shadow:0 14px 35px rgba(15,23,42,.14);
+}
+.badge{
+  display:inline-block;
+  padding:7px 13px;
+  background:#e0f2fe;
+  color:#075985;
+  border-radius:999px;
+  font-weight:900;
+  margin-bottom:12px;
+}
+h2{color:#1d4ed8;font-size:28px;margin:0 0 16px}
+h3{color:#7c2d12;font-size:22px}
+.scene{
+  display:grid;
+  grid-template-columns:1.04fr 1fr;
+  gap:24px;
+  align-items:start;
+}
+@media(max-width:900px){.scene{grid-template-columns:1fr}}
+.story{
+  background:#f8fafc;
+  border-radius:20px;
+  padding:18px;
+  border:1px solid #e2e8f0;
+  font-size:18px;
+  line-height:1.75;
+}
+.visual{
+  background:#fff7ed;
+  border-radius:22px;
+  padding:18px;
+  border:1px solid #fed7aa;
+}
+svg{width:100%;max-width:540px;display:block;margin:0 auto 14px}
+.table{
+  width:100%;
+  border-collapse:collapse;
+  margin:16px 0;
+  font-size:17px;
+}
+.table th,.table td{
+  border:1px solid #cbd5e1;
+  padding:10px;
+  text-align:center;
+}
+.table th{background:#eff6ff;color:#1d4ed8}
+.question{
+  background:#eff6ff;
+  border-left:8px solid #2563eb;
+  padding:18px;
+  border-radius:16px;
+  margin-top:18px;
+  font-size:18px;
+  line-height:1.8;
+}
+.answer{
+  background:#ecfdf5;
+  border-left:8px solid #10b981;
+  padding:18px;
+  border-radius:16px;
+  margin-top:14px;
+  font-size:18px;
+  line-height:1.8;
+}
+.keyword{font-weight:900;color:#dc2626}
+.footer{
+  background:#0f172a;
+  color:#e0f2fe;
+  border-radius:22px;
+  padding:22px;
+  line-height:1.8;
+  font-size:18px;
+}
+.funcbox{
+  border:4px solid #2563eb;
+  border-radius:22px;
+  background:#eff6ff;
+  padding:16px;
+  margin:16px auto;
+  max-width:500px;
+}
+.func-title{
+  background:#1d4ed8;
+  color:white;
+  border-radius:14px;
+  padding:10px;
+  font-weight:900;
+  text-align:center;
+  margin-bottom:12px;
+}
+.io{
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  gap:10px;
+  align-items:center;
+  margin:10px 0;
+}
+.iobox{
+  padding:12px;
+  border-radius:16px;
+  text-align:center;
+  font-weight:900;
+  border:3px solid #94a3b8;
+  background:white;
+}
+.in{border-color:#f59e0b;background:#fef3c7;color:#92400e}
+.out{border-color:#22c55e;background:#dcfce7;color:#166534}
+.arrow{font-size:32px;color:#dc2626;font-weight:900;text-align:center}
+.module{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin-top:14px;
+}
+.modbox{
+  border:3px solid #7c3aed;
+  background:#ede9fe;
+  color:#5b21b6;
+  border-radius:18px;
+  padding:13px;
+  text-align:center;
+  font-weight:900;
+}
+.tag{
+  display:inline-block;
+  padding:4px 8px;
+  border-radius:999px;
+  background:#ede9fe;
+  color:#5b21b6;
+  font-size:14px;
+  font-weight:900;
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>🧩 함수와 모듈 활용 과학고 창의력 경진대회 문제 3개</h1>
+  <p>코드 없이, 그림과 기능 분해 구조를 이용해 실생활·스포츠 과학·물리·화학·생명·지구과학 문제를 해결하는 융합 사고 문제</p>
+</header>
+
+<main>
+
+<section class="problem">
+  <span class="badge">문제 1 · 스포츠 과학 + 생명과학 + 함수</span>
+  <h2>운동 선수 피로도 계산 함수 설계</h2>
+
+  <div class="scene">
+    <div class="story">
+      <h3>문제 상황</h3>
+      <p>
+        과학고 스포츠 과학 연구팀은 농구 선수의 피로도를 빠르게 판단하려고 합니다.
+        피로도는 <b>심박수</b>, <b>운동 시간</b>, <b>수면 시간</b>을 함께 고려합니다.
+      </p>
+      <p>
+        연구팀은 이 계산 과정을 하나의 <b class="keyword">함수</b>로 만들고 싶어 합니다.
+        함수는 여러 입력값을 받아 정해진 처리 과정을 거친 뒤 결과를 내보내는 작은 계산 장치입니다.
+      </p>
+
+      <table class="table">
+        <tbody><tr><th>선수</th><th>심박수</th><th>운동 시간</th><th>수면 시간</th><th>예상 피로도</th></tr>
+        <tr><td>A</td><td>170</td><td>90분</td><td>5시간</td><td>높음</td></tr>
+        <tr><td>B</td><td>135</td><td>50분</td><td>8시간</td><td>낮음</td></tr>
+        <tr><td>C</td><td>155</td><td>80분</td><td>6시간</td><td>중간</td></tr>
+      </tbody></table>
+
+      <p><span class="tag">핵심 개념</span> 입력 → 처리 → 출력 / 함수 재사용</p>
+    </div>
+
+    <div class="visual">
+      <svg viewBox="0 0 540 260">
+        <rect x="55" y="165" width="430" height="50" rx="16" fill="#dbeafe"></rect>
+        <circle cx="135" cy="105" r="36" fill="#fca5a5" stroke="#ef4444" stroke-width="5"></circle>
+        <path d="M205 135 L245 135 L260 100 L285 170 L310 80 L335 135 L375 135" fill="none" stroke="#dc2626" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"></path>
+        <circle cx="420" cy="110" r="34" fill="#bfdbfe" stroke="#2563eb" stroke-width="5"></circle>
+        <path d="M420 86 L420 112 L442 126" stroke="#1d4ed8" stroke-width="7" stroke-linecap="round"></path>
+        <text x="270" y="242" text-anchor="middle" font-size="23" font-weight="900" fill="#1e3a8a">운동 피로도 함수</text>
+      </svg>
+
+      <div class="funcbox">
+        <div class="func-title">함수: 피로도_판단</div>
+        <div class="io">
+          <div class="iobox in">입력<br>심박수<br>운동시간<br>수면시간</div>
+          <div class="arrow">➡</div>
+          <div class="iobox out">출력<br>낮음·중간·높음</div>
+        </div>
+      </div>
+
+      <div class="module">
+        <div class="modbox">심박수 해석</div>
+        <div class="modbox">운동 시간 해석</div>
+        <div class="modbox">수면 회복 해석</div>
+        <div class="modbox">최종 피로도 판단</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="question">
+    <b>질문</b><br>
+    ① 이 문제에서 함수의 입력값 3가지는 무엇인가?<br>
+    ② 함수의 출력값은 어떤 형태가 적절한가?<br>
+    ③ 같은 피로도 판단 함수를 여러 선수에게 반복해서 사용할 수 있는 이유를 설명하시오.<br>
+    ④ 스포츠 과학에서 함수형 사고가 유용한 이유를 쓰시오.
+  </div>
+
+  <div class="answer">
+    <b>정답 및 해설</b><br>
+    ① <b>심박수, 운동 시간, 수면 시간</b>입니다.<br>
+    ② <b>피로도 낮음·중간·높음</b> 같은 등급 또는 위험 점수 형태가 적절합니다.<br>
+    ③ 입력값만 바꾸면 같은 판단 규칙을 여러 선수에게 적용할 수 있기 때문입니다.<br>
+    ④ 복잡한 생체 데이터를 기능별로 나누어 해석하고, 반복 측정 결과를 일관되게 판단할 수 있습니다.
+  </div>
+</section>
+
+
+<section class="problem">
+  <span class="badge">문제 2 · 화학 + 지구과학 + 모듈</span>
+  <h2>하천 수질 분석 모듈 나누기</h2>
+
+  <div class="scene">
+    <div class="story">
+      <h3>문제 상황</h3>
+      <p>
+        지구환경 연구팀은 하천 수질을 자동 분석하는 시스템을 설계하고 있습니다.
+        수질 판단에는 <b>pH</b>, <b>용존산소</b>, <b>질산염</b>, <b>탁도</b>가 사용됩니다.
+      </p>
+      <p>
+        모든 기능을 한꺼번에 처리하면 복잡하므로, 연구팀은 기능을 여러 <b class="keyword">모듈</b>로 나누려고 합니다.
+        모듈은 서로 관련 있는 기능을 묶어 놓은 독립적인 도구 상자입니다.
+      </p>
+
+      <table class="table">
+        <tbody><tr><th>측정 항목</th><th>값</th><th>의미</th></tr>
+        <tr><td>pH</td><td>5.2</td><td>산성 경향</td></tr>
+        <tr><td>용존산소</td><td>4.1 mg/L</td><td>부족</td></tr>
+        <tr><td>질산염</td><td>62 mg/L</td><td>높음</td></tr>
+        <tr><td>탁도</td><td>높음</td><td>부유물 많음</td></tr>
+      </tbody></table>
+
+      <p><span class="tag">핵심 개념</span> 기능 분리 / 모듈화 / 재사용</p>
+    </div>
+
+    <div class="visual">
+      <svg viewBox="0 0 540 260">
+        <path d="M40 170 C120 120,170 220,250 170 S390 120,500 170 L500 235 L40 235 Z" fill="#38bdf8" opacity=".75"></path>
+        <path d="M70 135 C140 90,190 185,260 140 S400 90,480 140" fill="none" stroke="#0284c7" stroke-width="8"></path>
+        <circle cx="170" cy="110" r="18" fill="#facc15"></circle>
+        <circle cx="235" cy="130" r="15" fill="#f97316"></circle>
+        <circle cx="320" cy="115" r="18" fill="#ef4444"></circle>
+        <rect x="380" y="82" width="62" height="85" rx="14" fill="#dbeafe" stroke="#2563eb" stroke-width="5"></rect>
+        <text x="270" y="245" text-anchor="middle" font-size="23" font-weight="900" fill="#1e3a8a">하천 수질 분석 시스템</text>
+      </svg>
+
+      <div class="funcbox">
+        <div class="func-title">수질 분석 시스템</div>
+        <div class="module">
+          <div class="modbox">pH 분석 모듈</div>
+          <div class="modbox">산소 분석 모듈</div>
+          <div class="modbox">질산염 분석 모듈</div>
+          <div class="modbox">탁도 분석 모듈</div>
+        </div>
+      </div>
+
+      <div class="io">
+        <div class="iobox in">입력<br>측정값</div>
+        <div class="arrow">➡</div>
+        <div class="iobox out">출력<br>수질 위험 판단</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="question">
+    <b>질문</b><br>
+    ① 위 시스템을 네 개의 모듈로 나눈다면 각각 어떤 모듈이 필요한가?<br>
+    ② 모듈로 나누면 수질 분석 시스템을 수정하거나 확장할 때 어떤 장점이 있는가?<br>
+    ③ 질산염 분석 모듈이 위험 신호를 보낼 가능성이 큰 이유를 설명하시오.<br>
+    ④ 실제 지구과학·화학 연구에서 모듈화가 필요한 이유를 쓰시오.
+  </div>
+
+  <div class="answer">
+    <b>정답 및 해설</b><br>
+    ① <b>pH 분석 모듈, 용존산소 분석 모듈, 질산염 분석 모듈, 탁도 분석 모듈</b>이 필요합니다.<br>
+    ② 특정 기능만 고치거나 추가할 수 있어 전체 시스템을 다시 만들 필요가 줄어듭니다.<br>
+    ③ 질산염 62 mg/L는 높은 값이므로 농업 비료 유입이나 오염 가능성을 의심할 수 있습니다.<br>
+    ④ 과학 데이터는 항목이 많고 복잡하므로 기능별로 나누어야 검증, 수정, 재사용이 쉬워집니다.
+  </div>
+</section>
+
+
+<section class="problem">
+  <span class="badge">문제 3 · 물리학 + 생명과학 + 함수·모듈 통합</span>
+  <h2>자율주행 구급 드론의 구조화된 판단</h2>
+
+  <div class="scene">
+    <div class="story">
+      <h3>문제 상황</h3>
+      <p>
+        산악 지역에서 응급 환자가 발생했습니다.
+        자율주행 구급 드론은 환자 위치, 배터리, 풍속, 환자 상태를 판단해 출동 여부를 결정합니다.
+      </p>
+      <p>
+        연구팀은 이 시스템을 여러 함수와 모듈로 나누어 설계하려 합니다.
+        예를 들어 거리 계산, 배터리 판단, 기상 판단, 환자 위험 판단을 따로 설계할 수 있습니다.
+      </p>
+
+      <table class="table">
+        <tbody><tr><th>항목</th><th>현재 값</th><th>판단 기준</th></tr>
+        <tr><td>환자 거리</td><td>3.2 km</td><td>5 km 이하 가능</td></tr>
+        <tr><td>배터리</td><td>68%</td><td>50% 이상 필요</td></tr>
+        <tr><td>풍속</td><td>9 m/s</td><td>12 m/s 미만 안전</td></tr>
+        <tr><td>환자 상태</td><td>의식 저하</td><td>응급 우선</td></tr>
+      </tbody></table>
+
+      <p><span class="tag">핵심 개념</span> 작은 함수들의 조합 → 하나의 모듈 시스템</p>
+    </div>
+
+    <div class="visual">
+      <svg viewBox="0 0 540 270">
+        <path d="M60 195 L160 90 L240 195 Z" fill="#94a3b8"></path>
+        <path d="M210 195 L340 55 L480 195 Z" fill="#64748b"></path>
+        <circle cx="145" cy="178" r="18" fill="#ef4444"></circle>
+        <rect x="285" y="82" width="74" height="32" rx="14" fill="#334155"></rect>
+        <rect x="250" y="90" width="145" height="14" rx="7" fill="#475569"></rect>
+        <rect x="315" y="52" width="14" height="92" rx="7" fill="#475569"></rect>
+        <circle cx="245" cy="97" r="24" fill="none" stroke="#94a3b8" stroke-width="6"></circle>
+        <circle cx="400" cy="97" r="24" fill="none" stroke="#94a3b8" stroke-width="6"></circle>
+        <circle cx="322" cy="45" r="24" fill="none" stroke="#94a3b8" stroke-width="6"></circle>
+        <circle cx="322" cy="148" r="24" fill="none" stroke="#94a3b8" stroke-width="6"></circle>
+        <text x="270" y="250" text-anchor="middle" font-size="23" font-weight="900" fill="#1e3a8a">구급 드론 판단 시스템</text>
+      </svg>
+
+      <div class="funcbox">
+        <div class="func-title">구급 드론 판단 모듈</div>
+        <div class="module">
+          <div class="modbox">거리 판단 함수</div>
+          <div class="modbox">배터리 판단 함수</div>
+          <div class="modbox">기상 판단 함수</div>
+          <div class="modbox">환자 위험 판단 함수</div>
+        </div>
+      </div>
+
+      <div class="io">
+        <div class="iobox in">입력<br>거리·배터리·풍속·상태</div>
+        <div class="arrow">➡</div>
+        <div class="iobox out">출력<br>출동 가능 / 대기</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="question">
+    <b>질문</b><br>
+    ① 이 시스템에 필요한 함수 4가지를 쓰시오.<br>
+    ② 현재 값만 보았을 때 드론은 출동 가능한가? 이유를 설명하시오.<br>
+    ③ 함수 여러 개를 모듈로 묶는 것이 좋은 이유를 설명하시오.<br>
+    ④ 실제 응급 구조에서 이런 자동 판단 시스템을 사용할 때 주의할 점을 쓰시오.
+  </div>
+
+  <div class="answer">
+    <b>정답 및 해설</b><br>
+    ① <b>거리 판단 함수, 배터리 판단 함수, 기상 판단 함수, 환자 위험 판단 함수</b>가 필요합니다.<br>
+    ② 출동 가능합니다. 거리는 5 km 이하, 배터리는 50% 이상, 풍속은 12 m/s 미만이고 환자 상태도 응급 우선입니다.<br>
+    ③ 각각의 판단 기능을 따로 검증하고 수정할 수 있으며, 다른 드론 시스템에도 재사용할 수 있습니다.<br>
+    ④ 실제 현장에서는 통신 오류, 지형 장애물, 환자 상태 변화, 법적·윤리적 책임을 함께 고려해야 합니다.
+  </div>
+</section>
+
+<section class="footer">
+  <b>총정리</b><br>
+  함수는 입력을 받아 처리한 뒤 결과를 내는 작은 기능 단위입니다.
+  모듈은 관련 있는 함수들을 묶어 놓은 도구 상자입니다.
+  과학고 창의력 문제에서는 코드를 쓰지 않아도 복잡한 과학 문제를 기능별로 나누고, 각 기능의 입력과 출력을 명확히 설명하는 능력이 중요합니다.
+</section>
+
+</main>
+
+
+</body></html>

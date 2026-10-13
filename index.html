@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!-- saved from url=(0088)file:///C:/Users/user/Downloads/index_final_c01%EC%9E%90%EB%8F%99%EC%8B%A4%ED%96%89.html -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>과학고 창의력 경진대회 문제 모음</title>
+<style>
+*{box-sizing:border-box}
+html,body{
+    margin:0;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    font-family:"Malgun Gothic",sans-serif;
+    background:#f8fafc;
+}
+header{
+    height:80px;
+    background:linear-gradient(135deg,#1d4ed8,#0f766e,#7c2d12);
+    color:white;
+    padding:18px 24px;
+}
+header h1{margin:0;font-size:24px}
+header p{margin:6px 0 0;font-size:13px;color:#dbeafe}
+
+.layout{
+    display:grid;
+    grid-template-columns:230px 1fr;
+    height:calc(100vh - 80px);
+}
+
+aside{
+    background:#f1f5f9;
+    padding:12px;
+    overflow:auto;
+    border-right:1px solid #cbd5e1;
+}
+
+.menu-btn{
+    width:100%;
+    padding:12px;
+    margin-bottom:8px;
+    border:none;
+    border-radius:14px;
+    background:white;
+    font-weight:bold;
+    text-align:left;
+    cursor:pointer;
+    border:1px solid #dbeafe;
+}
+
+.menu-btn:hover{
+    background:#dbeafe;
+}
+
+.menu-btn.active{
+    background:#c7d2fe;
+}
+
+iframe{
+    width:100%;
+    height:100%;
+    border:none;
+    background:white;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>🚀 과학고 창의력 경진대회 문제 예제 모음</h1>
+    <p>처음 실행 시 오른쪽 본문창에 c01.html이 자동으로 열립니다.</p>
+</header>
+
+<div class="layout">
+    <aside>
+        <button class="menu-btn active" onclick="openPage(&#39;c01.html&#39;,this)">01. 비트 시프트 연산</button>
+        <button class="menu-btn" onclick="openPage(&#39;c02.html&#39;,this)">02. 데이터 정렬·탐색</button>
+        <button class="menu-btn" onclick="openPage(&#39;c03.html&#39;,this)">03. OOP 객체지향</button>
+        <button class="menu-btn" onclick="openPage(&#39;c04.html&#39;,this)">04. 제어문</button>
+        <button class="menu-btn" onclick="openPage(&#39;c05.html&#39;,this)">05. 자료구조</button>
+        <button class="menu-btn" onclick="openPage(&#39;c06.html&#39;,this)">06. 함수와 모듈</button>
+        <button class="menu-btn" onclick="openPage(&#39;c07.html&#39;,this)">07. 파일 입출력</button>
+        <button class="menu-btn" onclick="openPage(&#39;c08.html&#39;,this)">08. 데이터분석</button>
+        <button class="menu-btn" onclick="openPage(&#39;c09.html&#39;,this)">09. 사물인터넷</button>
+        <button class="menu-btn" onclick="openPage(&#39;c10.html&#39;,this)">10. 인공지능</button>
+    </aside>
+
+    <iframe id="viewer" src="./index_files/c01.html"></iframe>
+</div>
+
+<script>
+function openPage(page, btn){
+    document.getElementById("viewer").src = page;
+
+    document.querySelectorAll(".menu-btn").forEach(b=>{
+        b.classList.remove("active");
+    });
+    btn.classList.add("active");
+}
+
+// 첫 화면 자동 로딩
+window.onload = function(){
+    document.getElementById("viewer").src = "c01.html";
+};
+</script>
+
+
+
+</body></html>

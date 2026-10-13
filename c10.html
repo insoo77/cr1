@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<!-- saved from url=(0050)file:///C:/Users/user/Downloads/preview%20(5).html -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>인공지능 활용 과학고 창의력 경진대회 문제 3개</title>
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:"Malgun Gothic","Apple SD Gothic Neo",Arial,sans-serif;
+  background:linear-gradient(135deg,#eef2ff,#ecfeff,#fff7ed);
+  color:#0f172a;
+}
+header{
+  background:linear-gradient(135deg,#312e81,#0f766e,#7c2d12);
+  color:white;
+  padding:30px;
+  text-align:center;
+}
+header h1{margin:0;font-size:31px}
+header p{font-size:18px;line-height:1.7;margin:10px 0 0}
+main{max-width:1180px;margin:0 auto;padding:24px}
+.problem{
+  background:white;
+  border-radius:28px;
+  padding:26px;
+  margin:26px 0;
+  border:1px solid #dbeafe;
+  box-shadow:0 14px 35px rgba(15,23,42,.14);
+}
+.badge{
+  display:inline-block;
+  padding:7px 13px;
+  background:#ede9fe;
+  color:#5b21b6;
+  border-radius:999px;
+  font-weight:900;
+  margin-bottom:12px;
+}
+h2{color:#1d4ed8;font-size:28px;margin:0 0 16px}
+h3{color:#7c2d12;font-size:22px}
+.scene{
+  display:grid;
+  grid-template-columns:1.04fr 1fr;
+  gap:24px;
+  align-items:start;
+}
+@media(max-width:900px){.scene{grid-template-columns:1fr}}
+.story{
+  background:#f8fafc;
+  border-radius:20px;
+  padding:18px;
+  border:1px solid #e2e8f0;
+  font-size:18px;
+  line-height:1.75;
+}
+.visual{
+  background:#fff7ed;
+  border-radius:22px;
+  padding:18px;
+  border:1px solid #fed7aa;
+}
+svg{width:100%;max-width:540px;display:block;margin:0 auto 14px}
+.table{
+  width:100%;
+  border-collapse:collapse;
+  margin:16px 0;
+  font-size:17px;
+}
+.table th,.table td{
+  border:1px solid #cbd5e1;
+  padding:10px;
+  text-align:center;
+}
+.table th{background:#eff6ff;color:#1d4ed8}
+.question{
+  background:#eff6ff;
+  border-left:8px solid #2563eb;
+  padding:18px;
+  border-radius:16px;
+  margin-top:18px;
+  font-size:18px;
+  line-height:1.8;
+}
+.answer{
+  background:#ecfdf5;
+  border-left:8px solid #10b981;
+  padding:18px;
+  border-radius:16px;
+  margin-top:14px;
+  font-size:18px;
+  line-height:1.8;
+}
+.keyword{font-weight:900;color:#dc2626}
+.footer{
+  background:#0f172a;
+  color:#e0f2fe;
+  border-radius:22px;
+  padding:22px;
+  line-height:1.8;
+  font-size:18px;
+}
+.ai-flow{
+  display:grid;
+  grid-template-columns:1fr auto 1fr auto 1fr;
+  gap:8px;
+  align-items:center;
+  margin:18px auto;
+  max-width:520px;
+}
+.ai-box{
+  min-height:82px;
+  border-radius:18px;
+  border:3px solid #2563eb;
+  background:#dbeafe;
+  color:#1e3a8a;
+  font-weight:900;
+  text-align:center;
+  padding:12px 8px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+}
+.ai-box.data{background:#fef3c7;border-color:#f59e0b;color:#92400e}
+.ai-box.model{background:#ede9fe;border-color:#7c3aed;color:#5b21b6}
+.ai-box.result{background:#dcfce7;border-color:#22c55e;color:#166534}
+.arrow{
+  font-size:28px;
+  font-weight:900;
+  color:#dc2626;
+  text-align:center;
+}
+.cards{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  justify-content:center;
+  margin-top:14px;
+}
+.card{
+  min-width:94px;
+  padding:12px;
+  border-radius:18px;
+  border:3px solid #94a3b8;
+  background:#f8fafc;
+  text-align:center;
+  font-weight:900;
+}
+.card.good{background:#dcfce7;border-color:#22c55e;color:#166534}
+.card.warn{background:#fef3c7;border-color:#f59e0b;color:#92400e}
+.card.bad{background:#fee2e2;border-color:#ef4444;color:#991b1b}
+.tag{
+  display:inline-block;
+  padding:4px 8px;
+  border-radius:999px;
+  background:#e0f2fe;
+  color:#075985;
+  font-size:14px;
+  font-weight:900;
+}
+.matrix{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+  max-width:420px;
+  margin:18px auto;
+}
+.cell{
+  border-radius:18px;
+  padding:14px;
+  text-align:center;
+  font-weight:900;
+  border:3px solid #cbd5e1;
+}
+.cell.tp{background:#dcfce7;border-color:#22c55e;color:#166534}
+.cell.fp{background:#fef3c7;border-color:#f59e0b;color:#92400e}
+.cell.fn{background:#fee2e2;border-color:#ef4444;color:#991b1b}
+.cell.tn{background:#dbeafe;border-color:#60a5fa;color:#1e3a8a}
+</style>
+</head>
+<body>
+<header>
+  <h1>🤖 인공지능 활용 과학고 창의력 경진대회 문제 3개</h1>
+  <p>코드 없이, 그림과 AI 판단 구조를 이용해 실생활·로봇공학·물리·화학·생명·지구과학 문제를 해결하는 융합 사고 문제</p>
+</header>
+
+<main>
+
+<section class="problem">
+  <span class="badge">문제 1 · 로봇공학 + 물리학 + 인공지능</span>
+  <h2>자율주행 로봇의 장애물 회피 판단</h2>
+
+  <div class="scene">
+    <div class="story">
+      <h3>문제 상황</h3>
+      <p>
+        과학고 로봇공학 동아리는 복도에서 스스로 이동하는 자율주행 로봇을 만들고 있습니다.
+        로봇은 카메라와 거리 센서로 앞의 상황을 관찰하고, 인공지능 모델이 <b class="keyword">정지·좌회전·우회전·직진</b> 중 하나를 판단합니다.
+      </p>
+      <p>
+        로봇은 물리적으로 관성 때문에 즉시 멈추지 못하므로, 장애물이 가까울수록 더 빠르게 판단해야 합니다.
+      </p>
+
+      <table class="table">
+        <tbody><tr><th>상황</th><th>왼쪽 거리</th><th>앞 거리</th><th>오른쪽 거리</th><th>AI 판단</th></tr>
+        <tr><td>A</td><td>80 cm</td><td>25 cm</td><td>100 cm</td><td>우회전</td></tr>
+        <tr><td>B</td><td>30 cm</td><td>120 cm</td><td>40 cm</td><td>직진</td></tr>
+        <tr><td>C</td><td>20 cm</td><td>18 cm</td><td>22 cm</td><td>정지</td></tr>
+      </tbody></table>
+
+      <p><span class="tag">핵심 AI 개념</span> 센서 데이터 → 모델 판단 → 로봇 행동</p>
+    </div>
+
+    <div class="visual">
+      <svg viewBox="0 0 540 280">
+        <rect x="55" y="55" width="430" height="170" rx="22" fill="#e0f2fe" stroke="#2563eb" stroke-width="6"></rect>
+        <rect x="230" y="142" width="80" height="60" rx="18" fill="#475569"></rect>
+        <circle cx="250" cy="210" r="16" fill="#111827"></circle>
+        <circle cx="292" cy="210" r="16" fill="#111827"></circle>
+        <circle cx="250" cy="160" r="9" fill="#38bdf8"></circle>
+        <circle cx="290" cy="160" r="9" fill="#38bdf8"></circle>
+        <rect x="250" y="72" width="40" height="50" rx="10" fill="#ef4444"></rect>
+        <path d="M270 142 L270 95" stroke="#dc2626" stroke-width="7" stroke-dasharray="8 8"></path>
+        <path d="M230 172 L135 172" stroke="#f59e0b" stroke-width="6" stroke-dasharray="8 8"></path>
+        <path d="M310 172 L420 172" stroke="#22c55e" stroke-width="6" stroke-dasharray="8 8"></path>
+        <text x="270" y="255" text-anchor="middle" font-size="23" font-weight="900" fill="#1e3a8a">AI 로봇 장애물 회피</text>
+      </svg>
+
+      <div class="ai-flow">
+        <div class="ai-box data">입력<br>카메라·거리 센서</div>
+        <div class="arrow">→</div>
+        <div class="ai-box model">AI 모델<br>상황 분류</div>
+        <div class="arrow">→</div>
+        <div class="ai-box result">출력<br>우회전·정지 등</div>
+      </div>
+
+      <div class="cards">
+        <div class="card warn">앞 25cm<br>위험</div>
+        <div class="card good">오른쪽 100cm<br>여유</div>
+        <div class="card good">판단<br>우회전</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="question">
+    <b>질문</b><br>
+    ① 상황 A에서 AI가 우회전을 선택한 이유를 설명하시오.<br>
+    ② 상황 C에서 정지를 선택해야 하는 이유를 물리학 관점에서 설명하시오.<br>
+    ③ 로봇이 학습하지 못한 새로운 장애물 모양을 만나면 어떤 문제가 생길 수 있는가?<br>
+    ④ 자율주행 로봇에서 AI 판단과 센서 품질이 모두 중요한 이유를 쓰시오.
+  </div>
+
+  <div class="answer">
+    <b>정답 및 해설</b><br>
+    ① 앞은 25 cm로 가깝지만 오른쪽은 100 cm로 충분히 넓기 때문에 우회전이 적절합니다.<br>
+    ② 앞·좌·우 거리가 모두 매우 짧아 이동하면 충돌할 가능성이 높고, 관성 때문에 즉시 멈추기 어려우므로 정지가 안전합니다.<br>
+    ③ 학습 데이터에 없던 모양을 잘못 인식해 직진하거나 잘못 회피할 수 있습니다.<br>
+    ④ AI 모델은 센서가 준 데이터를 바탕으로 판단하므로, 센서가 부정확하면 좋은 모델도 잘못된 결정을 내릴 수 있습니다.
+  </div>
+</section>
+
+
+<section class="problem">
+  <span class="badge">문제 2 · 생명과학 + 의학 + 인공지능</span>
+  <h2>AI 현미경의 세포 이상 탐지</h2>
+
+  <div class="scene">
+    <div class="story">
+      <h3>문제 상황</h3>
+      <p>
+        생명과학 연구팀은 현미경 이미지에서 정상 세포와 이상 세포를 구분하는 AI를 사용하려고 합니다.
+        AI는 세포의 크기, 핵의 모양, 염색 정도, 세포 경계의 불규칙성을 보고 판단합니다.
+      </p>
+      <p>
+        하지만 AI는 항상 맞는 것이 아니므로, 결과를 <b class="keyword">혼동 행렬</b>로 평가해야 합니다.
+      </p>
+
+      <table class="table">
+        <tbody><tr><th>세포</th><th>실제 상태</th><th>AI 판단</th></tr>
+        <tr><td>A</td><td>정상</td><td>정상</td></tr>
+        <tr><td>B</td><td>이상</td><td>이상</td></tr>
+        <tr><td>C</td><td>이상</td><td>정상</td></tr>
+        <tr><td>D</td><td>정상</td><td>이상</td></tr>
+      </tbody></table>
+
+      <p><span class="tag">핵심 AI 개념</span> 이미지 분류 · 오탐 · 미탐 · 신뢰성 평가</p>
+    </div>
+
+    <div class="visual">
+      <svg viewBox="0 0 540 280">
+        <rect x="60" y="60" width="420" height="170" rx="22" fill="#f8fafc" stroke="#94a3b8" stroke-width="6"></rect>
+        <circle cx="150" cy="130" r="34" fill="#bfdbfe" stroke="#2563eb" stroke-width="5"></circle>
+        <circle cx="150" cy="130" r="13" fill="#1d4ed8"></circle>
+        <circle cx="255" cy="120" r="38" fill="#fecaca" stroke="#ef4444" stroke-width="5"></circle>
+        <ellipse cx="255" cy="120" rx="20" ry="11" fill="#991b1b" transform="rotate(25 255 120)"></ellipse>
+        <circle cx="365" cy="145" r="31" fill="#bbf7d0" stroke="#22c55e" stroke-width="5"></circle>
+        <circle cx="365" cy="145" r="12" fill="#166534"></circle>
+        <path d="M120 80 q150 -80 300 0" fill="none" stroke="#7c3aed" stroke-width="6" stroke-dasharray="9 8"></path>
+        <rect x="215" y="25" width="110" height="45" rx="14" fill="#ede9fe" stroke="#7c3aed" stroke-width="5"></rect>
+        <text x="270" y="55" text-anchor="middle" font-size="16" font-weight="900" fill="#5b21b6">AI 현미경</text>
+        <text x="270" y="258" text-anchor="middle" font-size="23" font-weight="900" fill="#1e3a8a">세포 이상 탐지</text>
+      </svg>
+
+      <div class="ai-flow">
+        <div class="ai-box data">입력<br>세포 이미지</div>
+        <div class="arrow">→</div>
+        <div class="ai-box model">AI 모델<br>정상/이상 분류</div>
+        <div class="arrow">→</div>
+        <div class="ai-box result">출력<br>진단 보조</div>
+      </div>
+
+      <div class="matrix">
+        <div class="cell tp">실제 이상<br>AI 이상<br>맞음</div>
+        <div class="cell fn">실제 이상<br>AI 정상<br>미탐</div>
+        <div class="cell fp">실제 정상<br>AI 이상<br>오탐</div>
+        <div class="cell tn">실제 정상<br>AI 정상<br>맞음</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="question">
+    <b>질문</b><br>
+    ① C 세포의 AI 판단은 어떤 오류인가?<br>
+    ② D 세포의 AI 판단은 어떤 오류인가?<br>
+    ③ 의학·생명과학에서 C와 같은 오류가 특히 위험할 수 있는 이유를 설명하시오.<br>
+    ④ AI 현미경을 사용할 때 연구자가 반드시 함께 확인해야 하는 이유를 쓰시오.
+  </div>
+
+  <div class="answer">
+    <b>정답 및 해설</b><br>
+    ① C는 실제 이상인데 AI가 정상으로 판단했으므로 <b>미탐</b>입니다.<br>
+    ② D는 실제 정상인데 AI가 이상으로 판단했으므로 <b>오탐</b>입니다.<br>
+    ③ 미탐은 실제 이상 세포를 놓치는 것이므로 치료나 추가 검사를 늦출 수 있습니다.<br>
+    ④ AI는 학습 데이터와 이미지 품질에 영향을 받기 때문에, 최종 판단은 전문가 검토와 함께 이루어져야 합니다.
+  </div>
+</section>
+
+
+<section class="problem">
+  <span class="badge">문제 3 · 지구과학 + 화학 + 인공지능</span>
+  <h2>AI 기후 위험 예측 모델</h2>
+
+  <div class="scene">
+    <div class="story">
+      <h3>문제 상황</h3>
+      <p>
+        지구과학 연구팀은 기후 위험을 예측하는 AI 모델을 설계하고 있습니다.
+        AI는 기온 상승, 해수면 온도, 강수량 변화, 대기 중 CO₂ 농도를 입력으로 받아
+        <b class="keyword">폭염·가뭄·홍수 위험</b>을 예측합니다.
+      </p>
+
+      <table class="table">
+        <tbody><tr><th>지역</th><th>평균기온 상승</th><th>강수량 변화</th><th>CO₂</th><th>AI 예측</th></tr>
+        <tr><td>A</td><td>+0.8℃</td><td>보통</td><td>420 ppm</td><td>낮음</td></tr>
+        <tr><td>B</td><td>+1.7℃</td><td>감소</td><td>425 ppm</td><td>가뭄 주의</td></tr>
+        <tr><td>C</td><td>+2.3℃</td><td>집중호우 증가</td><td>430 ppm</td><td>복합 위험</td></tr>
+      </tbody></table>
+
+      <p><span class="tag">핵심 AI 개념</span> 예측 모델 · 복합 변수 · 과학적 해석</p>
+    </div>
+
+    <div class="visual">
+      <svg viewBox="0 0 540 280">
+        <circle cx="160" cy="135" r="70" fill="#38bdf8" stroke="#0284c7" stroke-width="6"></circle>
+        <path d="M95 135 q65 -35 130 0 q-65 35 -130 0" fill="#22c55e" opacity=".85"></path>
+        <circle cx="355" cy="85" r="38" fill="#facc15"></circle>
+        <path d="M315 175 C340 130,380 130,405 175" fill="none" stroke="#ef4444" stroke-width="10" stroke-linecap="round"></path>
+        <path d="M310 205 C350 170,390 170,430 205" fill="none" stroke="#0284c7" stroke-width="10" stroke-linecap="round"></path>
+        <path d="M160 50 q95 -45 190 0" fill="none" stroke="#7c3aed" stroke-width="6" stroke-dasharray="9 8"></path>
+        <rect x="235" y="25" width="105" height="45" rx="14" fill="#ede9fe" stroke="#7c3aed" stroke-width="5"></rect>
+        <text x="287" y="55" text-anchor="middle" font-size="16" font-weight="900" fill="#5b21b6">AI 예측</text>
+        <text x="270" y="258" text-anchor="middle" font-size="23" font-weight="900" fill="#1e3a8a">기후 위험 예측</text>
+      </svg>
+
+      <div class="ai-flow">
+        <div class="ai-box data">입력<br>기온·강수·CO₂</div>
+        <div class="arrow">→</div>
+        <div class="ai-box model">AI 모델<br>위험 패턴 학습</div>
+        <div class="arrow">→</div>
+        <div class="ai-box result">출력<br>가뭄·홍수·폭염</div>
+      </div>
+
+      <div class="cards">
+        <div class="card good">A<br>낮음</div>
+        <div class="card warn">B<br>가뭄</div>
+        <div class="card bad">C<br>복합 위험</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="question">
+    <b>질문</b><br>
+    ① AI가 C 지역을 복합 위험으로 예측한 근거를 두 가지 이상 쓰시오.<br>
+    ② CO₂ 농도는 화학적으로 어떤 의미를 가지며, 기후 예측에 왜 사용될 수 있는가?<br>
+    ③ AI 예측 결과만으로 정책을 결정하면 위험한 이유를 설명하시오.<br>
+    ④ 지구과학 연구에서 AI가 특히 유용한 이유를 쓰시오.
+  </div>
+
+  <div class="answer">
+    <b>정답 및 해설</b><br>
+    ① C 지역은 평균기온 상승이 +2.3℃로 크고, 집중호우가 증가하며, CO₂ 농도도 높습니다.<br>
+    ② CO₂는 온실기체로 지구 복사 에너지 균형에 영향을 주기 때문에 기후 변화 예측의 중요한 변수입니다.<br>
+    ③ AI는 과거 데이터와 입력 변수에 의존하므로, 데이터 편향이나 예상 밖의 자연 현상을 완전히 반영하지 못할 수 있습니다.<br>
+    ④ 기후 데이터는 양이 많고 변수 간 관계가 복잡하므로 AI는 패턴 발견과 위험 예측 보조에 유용합니다.
+  </div>
+</section>
+
+<section class="footer">
+  <b>총정리</b><br>
+  인공지능은 데이터를 입력받아 패턴을 찾고 판단이나 예측을 돕는 기술입니다.
+  로봇공학에서는 행동 판단, 생명과학에서는 이미지 분류, 지구과학에서는 기후 예측에 활용될 수 있습니다.
+  그러나 AI의 결과는 항상 검토가 필요하며, 센서 품질·학습 데이터·전문가 해석이 함께 중요합니다.
+</section>
+
+</main>
+
+</body></html>
